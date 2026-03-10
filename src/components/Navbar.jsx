@@ -39,7 +39,17 @@ const Navbar = () => {
 					{navLinks.map((link) => (
 						<button
 							key={link}
-							onClick={() => scrollTo(link)}
+							onClick={() => {
+								if (link === 'Courses') {
+									window.open('https://elystai.course.link', '_blank')
+									return
+								}
+								if (link === 'Blog') {
+									window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
+									return
+								}
+								scrollTo(link)
+							}}
 							className="font-body text-[0.95rem] text-white/85 hover:text-white transition-colors duration-200 min-h-12 flex items-center cursor-pointer"
 						>
 							{link}
@@ -48,7 +58,7 @@ const Navbar = () => {
 				</div>
 
 				<button
-					onClick={() => scrollTo('Community')}
+					onClick={() => window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')}
 					className="hidden md:flex items-center justify-center font-body font-bold text-[0.95rem] bg-white text-primary rounded-button px-7 min-h-12 hover:opacity-90 transition-opacity cursor-pointer"
 				>
 					Join Community
@@ -96,14 +106,24 @@ const Navbar = () => {
 							{navLinks.map((link) => (
 								<button
 									key={link}
-									onClick={() => scrollTo(link)}
+									onClick={() => {
+										if (link === 'Courses') {
+											window.open('https://elystai.course.link', '_blank')
+											return
+										}
+										if (link === 'Blog') {
+											window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
+											return
+										}
+										scrollTo(link)
+									}}
 									className="font-body text-base text-white/85 hover:text-white transition-colors min-h-12 cursor-pointer"
 								>
 									{link}
 								</button>
 							))}
 							<button
-								onClick={() => scrollTo('Community')}
+								onClick={() => window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')}
 								className="font-body font-bold text-sm bg-white text-primary rounded-button px-6 min-h-12 mt-2 hover:opacity-90 transition-opacity cursor-pointer"
 							>
 								Join Community
