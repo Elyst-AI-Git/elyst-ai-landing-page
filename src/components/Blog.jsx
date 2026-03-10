@@ -138,10 +138,13 @@ const Blog = () => {
 					</div>
 				</div>
 				<button
-					className="font-body font-bold text-sm bg-primary text-primary-foreground rounded-button h-13 px-8 hover:opacity-90 transition-opacity min-h-12 max-w-max self-center cursor-pointer"
-					onClick={() => window.open('https://elystai-newsletter.beehiiv.com/', '_blank')}
+					className="group font-body font-bold text-sm bg-primary text-primary-foreground rounded-button h-13 max-w-max px-8 gap-2 flex items-center justify-center hover:opacity-90 transition-all duration-200 min-h-12 hover:gap-3 cursor-pointer mt-12 self-center"
+					onClick={() => {
+						window.open('https://elystai.course.link', '_blank')
+					}}
 				>
-					Show All Blogs
+					All Blogs
+					<span className="inline-block transition-transform group-hover:translate-x-1">→</span>
 				</button>
 			</div>
 		</section>
