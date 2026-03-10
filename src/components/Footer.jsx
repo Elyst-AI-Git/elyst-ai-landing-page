@@ -28,7 +28,7 @@ const Footer = () => {
 									}
                                     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
 								}}
-								className="font-body text-sm text-text-muted-dark hover:text-accent transition-colors duration-200"
+								className="font-body text-sm text-text-muted-dark hover:text-accent transition-colors duration-200 cursor-pointer"
 							>
 								{link}
 							</button>
