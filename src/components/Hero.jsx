@@ -92,7 +92,11 @@ const Hero = () => {
 					transition={{ delay: 0.55, duration: 0.6, ease: 'easeOut' }}
 					className="flex flex-col sm:flex-row items-center justify-center gap-4"
 				>
-					<button className="font-body font-bold text-sm bg-white text-primary rounded-button h-13 px-8 hover:opacity-90 transition-opacity min-w-12 cursor-pointer">
+					<button className="font-body font-bold text-sm bg-white text-primary rounded-button h-13 px-8 hover:opacity-90 transition-opacity min-w-12 cursor-pointer"
+					onClick={() => {
+						window.open('https://elystai.course.link', '_blank')
+					}}
+					>
 						Start Learning
 					</button>
 					<a

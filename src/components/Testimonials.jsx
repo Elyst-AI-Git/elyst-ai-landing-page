@@ -119,7 +119,7 @@ const Testimonials = () => {
                   transition={{ duration: 0.4, ease: "easeOut" }}
                   className="bg-white/10 backdrop-blur-sm rounded-card p-8 md:p-10 shadow-card border border-white/10"
                 >
-                  <p className="font-body text-body-size text-white/90 leading-[1.8] mb-6">
+                  <p className="font-body text-body-size text-white/90 leading-[1.8] mb-6 text-start">
                     "{testimonials[current].quote}"
                   </p>
                   <div className="flex items-center gap-3">
@@ -128,7 +128,7 @@ const Testimonials = () => {
                       style={{ background: "linear-gradient(135deg, #00df82, #03624c)" }}
                     />
                     <div>
-                      <p className="font-body font-bold text-sm text-white">{testimonials[current].name}</p>
+                      <p className="font-body font-bold text-sm text-white text-start ">{testimonials[current].name}</p>
                       <p className="font-body text-sm text-white/50">{testimonials[current].role}</p>
                     </div>
                   </div>
