@@ -10,6 +10,14 @@ export default defineConfig({
     hmr: {
       overlay: false,
     },
+    proxy: {
+      '/api/beehiiv': {
+        target: 'https://api.beehiiv.com/v2',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/beehiiv/, ''),
+        secure: true,
+      },
+    },
   },
   plugins: [react(), tailwindcss()],
   resolve: {
