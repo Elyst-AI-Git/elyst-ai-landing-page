@@ -39,7 +39,7 @@ const Community = () => {
         >
           <button
             onClick={() => window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')}
-            className="group font-body font-bold text-sm bg-primary text-primary-foreground rounded-button h-13 px-8 gap-2 flex items-center justify-center hover:opacity-90 transition-all duration-200 min-h-12 hover:gap-3"
+            className="group font-body font-bold text-sm bg-primary text-primary-foreground rounded-button h-13 px-8 gap-2 flex items-center justify-center hover:opacity-90 transition-all duration-200 min-h-12 hover:gap-3 cursor-pointer"
             style={{ border: "1.5px solid hsl(var(--border))" }}
           >
             Join WhatsApp{' '}
