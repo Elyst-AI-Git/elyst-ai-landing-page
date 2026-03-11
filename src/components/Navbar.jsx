@@ -40,6 +40,16 @@ const Navbar = () => {
 						<button
 							key={link}
 							onClick={() => {
+								if (link === 'Courses') {
+									window.open('https://elystai.course.link', '_blank')
+									return
+								} else if (link === 'Blog') {
+									window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
+									return
+								} else if (link === 'Community') {
+									window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')
+									return
+								}
 								scrollTo(link)
 							}}
 							className="font-body text-[0.95rem] text-white/85 hover:text-white transition-colors duration-200 min-h-12 flex items-center cursor-pointer"
@@ -99,6 +109,16 @@ const Navbar = () => {
 								<button
 									key={link}
 									onClick={() => {
+										if (link === 'Courses') {
+											window.open('https://elystai.course.link', '_blank')
+											return
+										} else if (link === 'Blog') {
+											window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
+											return
+										} else if (link === 'Community') {
+											window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')
+											return
+										}
 										scrollTo(link)
 									}}
 									className="font-body text-base text-white/85 hover:text-white transition-colors min-h-12 cursor-pointer"
