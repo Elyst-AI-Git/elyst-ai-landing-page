@@ -50,10 +50,6 @@ const Blog = () => {
 
 				const body = await response.json()
 				const postCount = body?.data?.length || 0
-				if (postCount > 0) {
-					console.log('[Blog] First post sample:', body.data[0])
-				}
-				console.log('[Blog] Sorted posts:', body.data)
 				setBlogs(body.data)
 			} catch (error) {
 				console.error('Failed to fetch Beehiiv posts:', error)
