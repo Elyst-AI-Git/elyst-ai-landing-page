@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 const streaks = Array.from({ length: 12 }, (_, i) => ({
 	id: i,
@@ -12,6 +13,8 @@ const streaks = Array.from({ length: 12 }, (_, i) => ({
 }))
 
 const Hero = () => {
+	const navigate = useNavigate()
+
 	return (
 		<section
 			className="relative min-h-screen flex items-center justify-center overflow-hidden"
@@ -82,8 +85,7 @@ const Hero = () => {
 					transition={{ delay: 0.4, duration: 0.6, ease: 'easeOut' }}
 					className="font-body text-body-size text-white/75 max-w-140 mx-auto mb-10 leading-relaxed max-md:text-[0.95rem] max-md:max-w-[92vw]"
 				>
-					We help students, professionals, and businesses across Kerala learn, build, and grow with AI — in a
-					language that feels like home.
+					Elyst AI helps professionals and businesses put AI to actual use, not just talk about it. Through a curated AI community, live AI challenges and systems built for how you work, we help you adapt to the AI era.
 				</motion.p>
 
 				<motion.div
@@ -92,22 +94,19 @@ const Hero = () => {
 					transition={{ delay: 0.55, duration: 0.6, ease: 'easeOut' }}
 					className="flex flex-col sm:flex-row items-center justify-center gap-4"
 				>
-					<button className="font-body font-bold text-sm bg-white text-primary rounded-button h-13 px-8 hover:opacity-90 transition-opacity min-w-12 cursor-pointer"
-					onClick={() => {
-						window.open('https://elystai.course.link', '_blank')
-					}}
+					<button
+						className="font-body font-bold text-sm bg-white text-primary rounded-button h-13 px-8 hover:opacity-90 transition-opacity min-w-12 cursor-pointer"
+						onClick={() => navigate('/community')}
 					>
-						Start Learning
+						Join the Elyst AI Circle →
 					</button>
-					<a
-						href="https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="font-body font-bold text-sm text-white/90 hover:gap-3 transition-all duration-200 flex items-center gap-2 min-h-12"
+					<button
+						className="font-body font-bold text-sm text-white/90 hover:gap-3 transition-all duration-200 flex items-center gap-2 min-h-12 cursor-pointer"
+						onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}
 					>
-						Join our WhatsApp{' '}
+						See What's Coming{' '}
 						<span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-					</a>
+					</button>
 				</motion.div>
 			</div>
 		</section>
