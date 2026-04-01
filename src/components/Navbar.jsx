@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const navLinks = ['Home', 'About', 'Courses', 'Blog', 'Community']
+const navLinks = ['Home', 'About', 'Events', 'Blog']
 
 const Navbar = () => {
 	const [mobileOpen, setMobileOpen] = useState(false)
@@ -76,10 +76,10 @@ const Navbar = () => {
 				</div>
 
 				<button
-					onClick={() => window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')}
-					className={`hidden md:flex items-center justify-center font-body font-bold text-[0.95rem] ${scrolled ? 'bg-[#03624cd9] text-white' : 'bg-white text-primary'} rounded-button px-7 min-h-12 hover:opacity-90 transition-opacity cursor-pointer`}
+					onClick={() => window.open('#', '_blank')}
+					className="hidden md:flex items-center justify-center font-body font-bold text-[0.95rem] bg-white text-primary rounded-button px-7 min-h-12 hover:opacity-90 transition-opacity cursor-pointer"
 				>
-					Join Community
+					Join the Elyst AI Circle →
 				</button>
 
 				{/* Mobile hamburger */}
@@ -141,10 +141,10 @@ const Navbar = () => {
 								</button>
 							))}
 							<button
-								onClick={() => window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')}
-								className={`font-body font-bold text-sm ${scrolled ? 'bg-[#03624cd9] text-white' : 'bg-white text-primary'} rounded-button px-6 min-h-12 mt-2 hover:opacity-90 transition-opacity cursor-pointer`}
+								onClick={() => { setMobileOpen(false); window.open('#', '_blank') }}
+								className="font-body font-bold text-sm bg-white text-primary rounded-button px-6 min-h-12 mt-2 hover:opacity-90 transition-opacity cursor-pointer"
 							>
-								Join Community
+								Join the Elyst AI Circle →
 							</button>
 						</div>
 					</motion.div>
