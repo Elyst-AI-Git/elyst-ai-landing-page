@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import accelerator from "../assets/AI accelerator.jpg";
 import business from "../assets/AI business.jpg";
 
-// Replace these paths with actual images when ready
 const BUSINESS_IMAGE = business;
 const ACCELERATOR_IMAGE = accelerator;
 
@@ -14,8 +13,29 @@ const cardAnim = (delay) => ({
   transition: { delay, duration: 0.6, ease: "easeOut" },
 });
 
-function HoverCard({ tag, badge, title, description, points, cta, onCtaClick, imageSrc, imagePlaceholder, light, delay }) {
+function HoverCard({ tag, badge, title, description, cta, onCtaClick, imageSrc, imagePlaceholder, light, delay }) {
   const [hovered, setHovered] = useState(false);
+
+  const buttonStyle = {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 8,
+    background: light ? "#03624C" : "#ffffff",
+    color: light ? "#ffffff" : "#03624C",
+    border: "none",
+    borderRadius: 999,
+    padding: "12px 24px",
+    fontSize: "0.9rem",
+    cursor: "pointer",
+    transition: "opacity 0.2s",
+  };
+
+  const hoverButtonStyle = {
+    ...buttonStyle,
+    padding: "10px 18px",
+    fontSize: "0.82rem",
+    alignSelf: "center",
+  };
 
   return (
     <motion.div
@@ -26,14 +46,13 @@ function HoverCard({ tag, badge, title, description, points, cta, onCtaClick, im
         position: "relative",
         borderRadius: 24,
         overflow: "hidden",
-        minHeight: 420,
+        minHeight: 460,
         cursor: "default",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end",
       }}
     >
-      {/* Background image or gradient placeholder */}
       <div
         style={{
           position: "absolute",
@@ -46,7 +65,6 @@ function HoverCard({ tag, badge, title, description, points, cta, onCtaClick, im
         }}
       />
 
-      {/* Base dark overlay - always present, slightly stronger on hover */}
       <div
         style={{
           position: "absolute",
@@ -58,20 +76,20 @@ function HoverCard({ tag, badge, title, description, points, cta, onCtaClick, im
         }}
       />
 
-      {/* Bottom gradient — always visible to make title readable */}
       <div
         style={{
           position: "absolute",
-          bottom: 0, left: 0, right: 0,
-          height: "70%",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "72%",
           background: light
-            ? "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)"
+            ? "linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%)"
             : "linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%)",
           transition: "opacity 0.4s ease",
         }}
       />
 
-      {/* Hover detail overlay */}
       <div
         style={{
           position: "absolute",
@@ -83,7 +101,7 @@ function HoverCard({ tag, badge, title, description, points, cta, onCtaClick, im
           transition: "opacity 0.4s ease",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "flex-end",
           padding: "36px 32px",
           backdropFilter: "blur(4px)",
         }}
@@ -91,58 +109,26 @@ function HoverCard({ tag, badge, title, description, points, cta, onCtaClick, im
         <p
           className="font-body"
           style={{
-            color: light ? "#0d1a10" : "rgba(255,255,255,0.8)",
-            fontSize: "0.95rem",
+            color: light ? "#0d1a10" : "rgba(255,255,255,0.85)",
+            fontSize: "0.98rem",
             lineHeight: 1.7,
-            marginBottom: points?.length ? 20 : 0,
+            maxWidth: "32rem",
+            marginBottom: 24,
           }}
         >
           {description}
         </p>
-        {points?.length > 0 && (
-          <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: 10 }}>
-            {points.map((p) => (
-              <li
-                key={p}
-                className="font-body text-sm"
-                style={{
-                  display: "flex",
-                  gap: 10,
-                  alignItems: "flex-start",
-                  color: light ? "#0d1a10" : "rgba(255,255,255,0.85)",
-                }}
-              >
-                <span style={{ color: light ? "#03624C" : "#2ec866", fontWeight: 700, flexShrink: 0 }}>✓</span>
-                {p}
-              </li>
-            ))}
-          </ul>
-        )}
         <button
           onClick={onCtaClick}
           className="font-body font-bold"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 8,
-            background: light ? "#03624C" : "#ffffff",
-            color: light ? "#ffffff" : "#03624C",
-            border: "none",
-            borderRadius: 999,
-            padding: "12px 24px",
-            fontSize: "0.9rem",
-            cursor: "pointer",
-            alignSelf: "flex-start",
-            transition: "opacity 0.2s",
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85" }}
-          onMouseLeave={(e) => { e.currentTarget.style.opacity = "1" }}
+          style={hoverButtonStyle}
+          onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
         >
           {cta} →
         </button>
       </div>
 
-      {/* Always-visible content layer */}
       <div
         style={{
           position: "relative",
@@ -150,22 +136,20 @@ function HoverCard({ tag, badge, title, description, points, cta, onCtaClick, im
           padding: "24px 28px 28px",
           display: "flex",
           flexDirection: "column",
-          gap: 0,
+          justifyContent: "space-between",
+          gap: 20,
+          minHeight: 460,
           opacity: hovered ? 0 : 1,
           transition: "opacity 0.3s ease",
           pointerEvents: hovered ? "none" : "auto",
         }}
       >
-        {/* Top row: tag + optional badge */}
         <div
           style={{
-            position: "absolute",
-            top: 24,
-            left: 28,
-            right: 28,
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            gap: 12,
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -208,8 +192,7 @@ function HoverCard({ tag, badge, title, description, points, cta, onCtaClick, im
           )}
         </div>
 
-        {/* Bottom: title + arrow */}
-        <div style={{ marginTop: "auto", display: "flex", alignItems: "flex-end", justifyContent: "space-between", minHeight: 340 }}>
+        <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 18, maxWidth: "34rem" }}>
           <h3
             className="font-display font-bold"
             style={{
@@ -221,23 +204,15 @@ function HoverCard({ tag, badge, title, description, points, cta, onCtaClick, im
           >
             {title}
           </h3>
-          {/* <div
-            style={{
-              width: 52,
-              height: 52,
-              borderRadius: "50%",
-              background: light ? "#2ec866" : "#ffffff",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-              fontSize: "1.2rem",
-              color: light ? "#060d09" : "#03624C",
-              fontWeight: 700,
-            }}
+          <button
+            onClick={onCtaClick}
+            className="font-body font-bold"
+            style={buttonStyle}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
           >
-            ↗
-          </div> */}
+            {cta} →
+          </button>
         </div>
       </div>
     </motion.div>
@@ -254,7 +229,6 @@ const About = () => {
       }}
     >
       <div className="max-w-300 mx-auto">
-        {/* Top row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-14">
           <div>
             <h2 className="font-display font-bold text-h1 text-text-primary mb-6">
@@ -266,41 +240,30 @@ const About = () => {
           </p>
         </div>
 
-        {/* Two hover cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <HoverCard
-            delay={0}
-            tag="Business Path"
-            title="AI for Your Business"
-            description="We work with a small number of companies at a time to build AI systems that fit how they actually operate. Deep work, not surface-level consulting."
-            points={[
-              "Content pipelines & workflow automation",
-              "AI-assisted lead generation",
-              "Team training & implementation",
-            ]}
-            cta="Start a Conversation"
-            onCtaClick={() => document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" })}
-            imageSrc={BUSINESS_IMAGE}
-            imagePlaceholder="linear-gradient(135deg, #071a10 0%, #0d3d25 50%, #1a5c35 100%)"
-            light={false}
-          />
-
           <HoverCard
             delay={0.12}
             tag="Learning Path"
             badge="Launching Soon"
             title="AI Accelerator"
-            description="A curated community for professionals who want to use AI without the overwhelm. This is not a course. It is a room where serious people show up and do the work."
-            points={[
-              "Weekly AI Signal — curated, not noisy",
-              "Live sessions & real challenges",
-              "A network of people who are already ahead",
-            ]}
+            description="A curated community for professionals who want to use AI without the overwhelm. Weekly updates, live sessions, real challenges, and a network of people figuring it out alongside you. This is not a course. It is a room where serious people show up and do the work."
             cta="Apply for a Founding Spot"
             onCtaClick={() => window.open("#", "_blank")}
             imageSrc={ACCELERATOR_IMAGE}
             imagePlaceholder="linear-gradient(135deg, #00c96a 0%, #00df82 50%, #2ec866 100%)"
             light={true}
+          />
+
+          <HoverCard
+            delay={0}
+            tag="Business Path"
+            title="AI for Business"
+            description="We work with a small number of companies at a time to build AI systems that fit how they actually operate - content pipelines, workflow automation, AI-assisted lead generation, and team training. Deep work, not surface-level consulting."
+            cta="Start a Conversation"
+            onCtaClick={() => document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" })}
+            imageSrc={BUSINESS_IMAGE}
+            imagePlaceholder="linear-gradient(135deg, #071a10 0%, #0d3d25 50%, #1a5c35 100%)"
+            light={false}
           />
         </div>
       </div>
