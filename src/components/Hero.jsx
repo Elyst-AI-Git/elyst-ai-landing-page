@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 const streaks = Array.from({ length: 12 }, (_, i) => ({
 	id: i,
@@ -12,6 +13,8 @@ const streaks = Array.from({ length: 12 }, (_, i) => ({
 }))
 
 const Hero = () => {
+	const navigate = useNavigate()
+
 	return (
 		<section
 			className="relative min-h-screen flex items-center justify-center overflow-hidden"
@@ -93,7 +96,7 @@ const Hero = () => {
 				>
 					<button
 						className="font-body font-bold text-sm bg-white text-primary rounded-button h-13 px-8 hover:opacity-90 transition-opacity min-w-12 cursor-pointer"
-						onClick={() => window.open('#', '_blank')}
+						onClick={() => navigate('/community')}
 					>
 						Join the Elyst AI Circle →
 					</button>
