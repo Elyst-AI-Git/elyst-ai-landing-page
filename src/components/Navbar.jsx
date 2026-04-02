@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useNavigate } from 'react-router-dom';
 
 const navLinks = ['Home', 'About', 'Events', 'Blog']
 
 const Navbar = () => {
+	const navigate = useNavigate();
 	const [mobileOpen, setMobileOpen] = useState(false)
 	
 	const [scrolled, setScrolled] = useState(false)
@@ -77,7 +79,7 @@ const Navbar = () => {
 
 				<div className="flex items-center justify-end">
 					<button
-						onClick={() => window.open('#', '_blank')}
+						onClick={() => navigate('/community')}
 						className="hidden md:flex items-center justify-center font-body font-bold text-[0.95rem] bg-white text-primary rounded-button px-7 min-h-12 hover:opacity-90 transition-opacity cursor-pointer"
 					>
 						Join the Elyst AI Circle →
