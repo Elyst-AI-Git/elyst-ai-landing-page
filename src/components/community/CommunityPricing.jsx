@@ -22,19 +22,19 @@ const earlyBirdExtras = [
   { icon: '🔒', text: 'Your Rate Stays Locked Forever' },
 ]
 
-function PriceCard({ name, badge, price, sub, features, extraLabel, extras, cta, highlighted }) {
+function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta, highlighted }) {
   const [btnHover, setBtnHover] = useState(false)
   return (
     <div style={{
       background: highlighted
         ? 'linear-gradient(145deg, #0d3d25, #1a5c35)'
-        : 'rgba(255,255,255,0.05)',
-      border: `1.5px solid ${highlighted ? '#2ec866' : 'rgba(255,255,255,0.1)'}`,
+        : '#ffffff',
+      border: `1.5px solid ${highlighted ? '#2ec866' : '#e4f2e9'}`,
       borderRadius: 24,
       padding: 36,
       position: 'relative',
       overflow: 'hidden',
-      boxShadow: highlighted ? '0 0 60px rgba(46,200,102,0.18), 0 20px 60px rgba(13,61,37,0.4)' : 'none',
+      boxShadow: highlighted ? '0 0 60px rgba(46,200,102,0.18), 0 20px 60px rgba(13,61,37,0.15)' : '0 2px 12px rgba(0,0,0,0.04)',
       height: '100%',
       display: 'flex',
       flexDirection: 'column',
@@ -49,29 +49,27 @@ function PriceCard({ name, badge, price, sub, features, extraLabel, extras, cta,
         }} />
       )}
 
-      {badge && (
+      {/* Diagonal ribbon */}
+      {ribbon && (
         <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 6,
-          background: 'rgba(46,200,102,0.15)',
-          border: '1px solid rgba(46,200,102,0.35)',
-          borderRadius: 999,
-          padding: '5px 12px',
-          marginBottom: 20,
-          alignSelf: 'flex-start',
+          position: 'absolute',
+          top: 28,
+          right: -36,
+          width: 160,
+          textAlign: 'center',
+          transform: 'rotate(45deg)',
+          background: '#2ec866',
+          color: '#060d09',
+          fontFamily: 'var(--font-body)',
+          fontSize: '0.62rem',
+          fontWeight: 800,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          padding: '6px 0',
+          boxShadow: '0 2px 8px rgba(46,200,102,0.4)',
+          zIndex: 1,
         }}>
-          <span style={{ width: 6, height: 6, background: '#2ec866', borderRadius: '50%', flexShrink: 0 }} />
-          <span style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '0.68rem',
-            fontWeight: 800,
-            color: '#2ec866',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-          }}>
-            {badge}
-          </span>
+          {ribbon}
         </div>
       )}
 
@@ -81,7 +79,7 @@ function PriceCard({ name, badge, price, sub, features, extraLabel, extras, cta,
           fontSize: '0.72rem',
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
-          color: highlighted ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.35)',
+          color: highlighted ? 'rgba(255,255,255,0.5)' : '#1a7a4a',
           marginBottom: 10,
         }}
       >
@@ -90,28 +88,28 @@ function PriceCard({ name, badge, price, sub, features, extraLabel, extras, cta,
 
       <div
         className="font-display font-bold"
-        style={{ fontSize: 'clamp(2.2rem, 5vw, 3rem)', color: '#ffffff', lineHeight: 1, marginBottom: 4 }}
+        style={{ fontSize: 'clamp(2.2rem, 5vw, 3rem)', color: highlighted ? '#ffffff' : '#0d1a10', lineHeight: 1, marginBottom: 4 }}
       >
         {price}
       </div>
 
       <div
         className="font-body text-sm"
-        style={{ color: 'rgba(255,255,255,0.4)', marginBottom: 24 }}
+        style={{ color: highlighted ? 'rgba(255,255,255,0.4)' : '#7a9a85', marginBottom: 24 }}
       >
         {sub}
       </div>
 
-      <div style={{ height: '1px', background: 'rgba(255,255,255,0.08)', marginBottom: 20 }} />
+      <div style={{ height: '1px', background: highlighted ? 'rgba(255,255,255,0.08)' : '#e4f2e9', marginBottom: 20 }} />
 
       <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 auto', display: 'flex', flexDirection: 'column', gap: 12 }}>
         {features.map(({ icon, text }) => (
           <li
             key={text}
             className="font-body text-sm"
-            style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.8)' }}
+            style={{ display: 'flex', alignItems: 'center', gap: 10, color: highlighted ? 'rgba(255,255,255,0.8)' : '#1a3a28' }}
           >
-            <span style={{ color: highlighted ? '#2ec866' : 'rgba(255,255,255,0.3)', fontSize: '0.9rem' }}>{icon}</span>
+            <span style={{ color: highlighted ? '#2ec866' : '#1a7a4a', fontSize: '0.9rem' }}>{icon}</span>
             {text}
           </li>
         ))}
@@ -119,7 +117,7 @@ function PriceCard({ name, badge, price, sub, features, extraLabel, extras, cta,
 
       {extras && (
         <div style={{ marginTop: 20 }}>
-          <div style={{ height: '1px', background: 'rgba(255,255,255,0.08)', marginBottom: 14 }} />
+          <div style={{ height: '1px', background: highlighted ? 'rgba(255,255,255,0.08)' : '#e4f2e9', marginBottom: 14 }} />
           <div className="font-body font-bold" style={{ fontSize: '0.75rem', color: '#2ec866', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 10 }}>
             {extraLabel}
           </div>
@@ -128,7 +126,7 @@ function PriceCard({ name, badge, price, sub, features, extraLabel, extras, cta,
               <li
                 key={text}
                 className="font-body text-sm font-bold"
-                style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#ffffff' }}
+                style={{ display: 'flex', alignItems: 'center', gap: 10, color: highlighted ? '#ffffff' : '#0d1a10' }}
               >
                 <span style={{ fontSize: '0.9rem' }}>{icon}</span>
                 {text}
@@ -150,9 +148,9 @@ function PriceCard({ name, badge, price, sub, features, extraLabel, extras, cta,
           borderRadius: 999,
           background: highlighted
             ? (btnHover ? '#3ad077' : '#2ec866')
-            : (btnHover ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.07)'),
-          border: highlighted ? 'none' : '1px solid rgba(255,255,255,0.15)',
-          color: highlighted ? '#060d09' : '#ffffff',
+            : (btnHover ? '#e4f2e9' : '#f0faf4'),
+          border: highlighted ? 'none' : '1.5px solid #c8e6d4',
+          color: highlighted ? '#060d09' : '#0d3d25',
           fontFamily: 'var(--font-body)',
           fontWeight: 700,
           fontSize: '0.95rem',
@@ -169,35 +167,19 @@ function PriceCard({ name, badge, price, sub, features, extraLabel, extras, cta,
 const CommunityPricing = () => (
   <section
     id="pricing"
-    style={{
-      background: '#030b06',
-      padding: '0 0 96px',
-    }}
+    style={{ background: '#f5f9f6', padding: '96px 0' }}
   >
-    <div className="max-w-275 mx-auto px-(--section-px)" style={{ paddingTop: 96 }}>
+    <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 clamp(24px, 6vw, 100px)' }}>
 
       <motion.div {...anim(0)} style={{ marginBottom: 52 }}>
-        <span style={{
-          fontFamily: 'var(--font-body)',
-          fontSize: '0.72rem',
-          fontWeight: 800,
-          color: '#2ec866',
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          display: 'block',
-          marginBottom: 12,
-        }}>
-          Pricing
-        </span>
         <h2
-          className="font-display font-bold text-white"
-          style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', lineHeight: 1.15, marginBottom: 10 }}
+          className="font-display font-bold"
+          style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', color: '#0d1a10', lineHeight: 1.15, marginBottom: 10 }}
         >
           Simple, transparent pricing.
         </h2>
-        <p className="font-body" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '1rem' }}>
-          One membership. Everything included.{' '}
-          <span style={{ color: 'rgba(255,255,255,0.6)' }}>No hidden charges.</span>
+        <p className="font-body" style={{ color: '#4a6a55', fontSize: '1rem' }}>
+          One membership. Everything included. No hidden charges.
         </p>
       </motion.div>
 
@@ -214,7 +196,7 @@ const CommunityPricing = () => (
         <motion.div {...anim(0.2)} style={{ height: '100%' }}>
           <PriceCard
             name="Early Bird"
-            badge="Limited spots"
+            ribbon="Limited Spots"
             price="₹199/month"
             sub="per month · rate locked forever"
             features={standardFeatures}
@@ -226,7 +208,7 @@ const CommunityPricing = () => (
         </motion.div>
       </div>
 
-      <motion.p {...anim(0.3)} className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.35)', marginTop: 18 }}>
+      <motion.p {...anim(0.3)} className="font-body text-sm" style={{ color: '#7a9a85', marginTop: 18 }}>
         Early Bird spots are limited. Once they are gone, the standard rate is all that remains.
       </motion.p>
     </div>

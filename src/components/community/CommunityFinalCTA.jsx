@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 const CommunityFinalCTA = () => (
   <section
     style={{
-      background: '#111816',
+      background: '#ffffff',
       padding: '0 24px 80px',
     }}
   >

@@ -2,36 +2,45 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
-  {
-    quote: "It was helpful for an individual who has zero knowledge in technical background. Good to see you bringing insights on people on how to use the tools more efficiently.",
-    name: "Swathi Pradeep",
-    role: "AI Yathra 2.0 Learner",
-  },
-  {
-    quote: "I learned a lot about AI tools and their practical use. The hands on approach of showing each things practically, showing how each tool actually works, made the sessions very effective. Looking forward to what's next.",
-    name: "Muhammed Sinan B",
-    role: "AI Yathra 1.0 Learner",
-  },
+  //3
   {
     quote: "AI YATHRA Broke My Brain in 48 Hours. If you're curious about AI but don't know where to start, I highly recommend keeping an eye out for their next event.",
     name: "Rahima SV",
     role: "AI Yathra 2.0 Learner",
   },
-  {
-    quote: "Big shoutout to Nihal Anas and Fathima Shirin from Elyst AI. Your passion to deliver value was obvious throughout the journey. Expecting more sessions like this!",
-    name: "Muhammed Rasil N",
-    role: "AI Yathra 1.0 Learner",
-  },
+  //5
   {
     quote: "Even though I use AI regularly, I realized there was an entire dimension I was missing until I attended AI Yathra. They created something truly valuable, a workshop that's both productive and transformative.",
     name: "Shaheen Raheem",
     role: "AI Yathra 2.0 Learner",
   },
+  //6
   {
     quote: "Shirin and Nihal didn't just teach Gen AI, automations & AI tools. You guided us how to think, how to approach learning, it didn't feel like a webinar at all.",
     name: "Rohit P",
     role: "AI Yathra 1.0 Learner",
   },
+  //1
+  {
+    quote: "It was helpful for an individual who has zero knowledge in technical background. Good to see you bringing insights on people on how to use the tools more efficiently.",
+    name: "Swathi Pradeep",
+    role: "AI Yathra 2.0 Learner",
+  },
+  //2
+  {
+    quote: "I learned a lot about AI tools and their practical use. The hands on approach of showing each things practically, showing how each tool actually works, made the sessions very effective. Looking forward to what's next.",
+    name: "Muhammed Sinan B",
+    role: "AI Yathra 1.0 Learner",
+  },
+  
+  //4
+  {
+    quote: "Big shoutout to Nihal Anas and Fathima Shirin from Elyst AI. Your passion to deliver value was obvious throughout the journey. Expecting more sessions like this!",
+    name: "Muhammed Rasil N",
+    role: "AI Yathra 1.0 Learner",
+  },
+  
+  
 ];
 
 const stats = [

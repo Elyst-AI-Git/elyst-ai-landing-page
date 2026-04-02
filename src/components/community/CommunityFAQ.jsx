@@ -41,41 +41,29 @@ const CommunityFAQ = () => {
   return (
     <section
       style={{
-        background: '#111816',
-        padding: '0 0 96px',
+        background: '#ffffff',
+        padding: '96px 0',
       }}
     >
-      <div className="max-w-275 mx-auto px-(--section-px)" style={{ paddingTop: 96 }}>
+      <div style={{ maxWidth: 760, margin: '0 auto', padding: '0 clamp(24px, 6vw, 48px)' }}>
 
-        <motion.div {...anim(0)} style={{ marginBottom: 48 }}>
-          <span style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '0.72rem',
-            fontWeight: 800,
-            color: '#2ec866',
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            display: 'block',
-            marginBottom: 12,
-          }}>
-            FAQ
-          </span>
+        <motion.div {...anim(0)} style={{ marginBottom: 48, textAlign: 'center' }}>
           <h2
             className="font-display font-bold"
-            style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', color: '#ffffff', lineHeight: 1.15, marginBottom: 10 }}
+            style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', color: '#0d1a10', lineHeight: 1.15, marginBottom: 10 }}
           >
             Questions people ask{' '}
-            <span style={{ color: 'rgba(255,255,255,0.35)' }}>before applying</span>
+            <span style={{ color: '#1a7a4a' }}>before applying</span>
           </h2>
         </motion.div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8, maxWidth: 720 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {faqs.map(({ q, a }, i) => (
             <motion.div key={i} {...anim(i * 0.06)}>
               <div
                 style={{
-                  background: open === i ? 'rgba(46,200,102,0.06)' : 'rgba(255,255,255,0.04)',
-                  border: `1px solid ${open === i ? 'rgba(46,200,102,0.3)' : 'rgba(255,255,255,0.08)'}`,
+                  background: open === i ? 'rgba(46,200,102,0.08)' : '#eaf5ee',
+                  border: `1px solid ${open === i ? 'rgba(46,200,102,0.45)' : '#c8e6d4'}`,
                   borderRadius: 14,
                   overflow: 'hidden',
                   transition: 'background 0.25s, border-color 0.25s',
@@ -88,7 +76,7 @@ const CommunityFAQ = () => {
                     background: 'transparent',
                     border: 'none',
                     padding: '20px 24px',
-                    color: open === i ? '#ffffff' : 'rgba(255,255,255,0.75)',
+                    color: open === i ? '#0d1a10' : '#2a4a35',
                     fontSize: '0.95rem',
                     transition: 'color 0.2s',
                     lineHeight: 1.5,
@@ -96,7 +84,7 @@ const CommunityFAQ = () => {
                 >
                   <span>{q}</span>
                   <span style={{
-                    color: '#2ec866',
+                    color: '#1a7a4a',
                     flexShrink: 0,
                     transform: open === i ? 'rotate(45deg)' : 'none',
                     transition: 'transform 0.3s',
@@ -105,7 +93,7 @@ const CommunityFAQ = () => {
                     justifyContent: 'center',
                     width: 28,
                     height: 28,
-                    background: open === i ? 'rgba(46,200,102,0.15)' : 'rgba(255,255,255,0.06)',
+                    background: open === i ? 'rgba(46,200,102,0.15)' : 'rgba(46,200,102,0.08)',
                     borderRadius: '50%',
                     fontSize: '1rem',
                     fontWeight: 300,
@@ -125,7 +113,7 @@ const CommunityFAQ = () => {
                     >
                       <div
                         className="font-body text-sm leading-relaxed"
-                        style={{ padding: '0 24px 20px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.75 }}
+                        style={{ padding: '0 24px 20px', color: '#4a6a55', lineHeight: 1.75 }}
                       >
                         {a}
                       </div>

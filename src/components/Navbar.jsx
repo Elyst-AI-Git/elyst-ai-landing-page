@@ -7,24 +7,6 @@ const navLinks = ['Home', 'About', 'Events', 'Blog']
 const Navbar = () => {
 	const navigate = useNavigate();
 	const [mobileOpen, setMobileOpen] = useState(false)
-	
-	const [scrolled, setScrolled] = useState(false)
-	const changeBackgroundOnScroll = () => {
-		const coursesEl = document.getElementById('courses')
-		const blogEl = document.getElementById('blog')
-		const coursesPosition = coursesEl?.offsetTop - 80
-		const blogPosition = blogEl?.offsetTop - 80
-		if (window.scrollY > coursesPosition) {
-			if (window.scrollY > blogPosition) {
-				setScrolled(false)
-			} else {
-				setScrolled(true)
-			}
-		} else {
-			setScrolled(false)
-		}
-	}
-	window.addEventListener('scroll', changeBackgroundOnScroll)
 
 	const scrollTo = (id) => {
 		setMobileOpen(false)
@@ -39,7 +21,7 @@ const Navbar = () => {
 	return (
 		<nav className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 md:px-8 pt-4">
 			<div
-				className={`${scrolled ? 'nav-color-scroll' : 'nav-color'} max-w-300 w-full relative flex items-center justify-between px-6 md:px-10 transition-all duration-500`}
+				className="nav-color max-w-300 w-full relative flex items-center justify-between px-6 md:px-10 transition-all duration-500"
 				style={{
 					height: 64,
 					backdropFilter: 'blur(24px) saturate(1.4)',
@@ -48,7 +30,7 @@ const Navbar = () => {
 					boxShadow: '0 4px 30px rgba(3, 98, 76, 0.2), inset 0 1px 0 rgba(255,255,255,0.1)',
 				}}
 			>
-				<span className={`font-display font-bold text-2xl ${scrolled ? 'text-[#03624cd9]' : 'text-white'}`} style={{ letterSpacing: '-0.075em' }}>
+				<span className="font-display font-bold text-2xl text-white" style={{ letterSpacing: '-0.075em' }}>
 					elyst AI
 				</span>
 
@@ -70,7 +52,7 @@ const Navbar = () => {
 								}
 								scrollTo(link)
 							}}
-							className={`font-body text-[0.95rem] ${scrolled ? 'text-[#03624cd9] hover:text-[#00df82]' : 'text-white/85 hover:text-white'} transition-colors duration-200 min-h-12 flex items-center cursor-pointer`}
+							className="font-body text-[0.95rem] text-white/85 hover:text-white transition-colors duration-200 min-h-12 flex items-center cursor-pointer"
 						>
 							{link}
 						</button>
@@ -92,15 +74,9 @@ const Navbar = () => {
 						aria-label="Toggle menu"
 					>
 						<div className="flex flex-col gap-1.5">
-							<span
-								className={`block w-6 h-0.5 ${scrolled ? 'bg-[#03624cd9] text-white' : 'bg-white text-primary'} transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`}
-							/>
-							<span
-								className={`block w-6 h-0.5 ${scrolled ? 'bg-[#03624cd9]' : 'bg-white'} transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`}
-							/>
-							<span
-								className={`block w-6 h-0.5 ${scrolled ? 'bg-[#03624cd9] text-white' : 'bg-white text-primary'} transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`}
-							/>
+							<span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
+							<span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
+							<span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
 						</div>
 					</button>
 				</div>
@@ -114,7 +90,7 @@ const Navbar = () => {
 						animate={{ height: 'auto', opacity: 1 }}
 						exit={{ height: 0, opacity: 0 }}
 						transition={{ duration: 0.3 }}
-						className={`${scrolled ? 'nav-color-scroll' : 'nav-color'} md:hidden overflow-hidden mt-2 mx-4`}
+						className="nav-color md:hidden overflow-hidden mt-2 mx-4"
 						style={{
 							backdropFilter: 'blur(16px)',
 							WebkitBackdropFilter: 'blur(16px)',
@@ -139,13 +115,13 @@ const Navbar = () => {
 										}
 										scrollTo(link)
 									}}
-									className={`font-body text-base ${scrolled ? 'text-[#03624cd9] hover:text-[#00df82]' : 'text-white/85 hover:text-white'} transition-colors min-h-12 cursor-pointer`}
+									className="font-body text-base text-white/85 hover:text-white transition-colors min-h-12 cursor-pointer"
 								>
 									{link}
 								</button>
 							))}
 							<button
-								onClick={() => { setMobileOpen(false); window.open('#', '_blank') }}
+								onClick={() => { setMobileOpen(false); navigate('/community') }}
 								className="font-body font-bold text-sm bg-white text-primary rounded-button px-6 min-h-12 mt-2 hover:opacity-90 transition-opacity cursor-pointer"
 							>
 								Join →
