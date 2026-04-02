@@ -235,12 +235,24 @@ const About = () => {
               What We Do
             </h2>
           </div>
-          <p className="font-body text-body-size text-text-secondary leading-[1.7]">
+          <p className="font-body text-body-size text-text-secondary leading-[1.7] text-left">
             Elyst AI works at the intersection of AI systems and professional upskilling. We build AI infrastructure for businesses and we run a community where professionals learn to apply AI to their actual work, not in theory, but in practice.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <HoverCard
+            delay={0}
+            tag="Business Path"
+            title="AI for Business"
+            description="We work with a small number of companies at a time to build AI systems that fit how they actually operate - content pipelines, workflow automation, AI-assisted lead generation, and team training. Deep work, not surface-level consulting."
+            cta="Start a Conversation"
+            onCtaClick={() => document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" })}
+            imageSrc={BUSINESS_IMAGE}
+            imagePlaceholder="linear-gradient(135deg, #071a10 0%, #0d3d25 50%, #1a5c35 100%)"
+            light={false}
+          />
+
           <HoverCard
             delay={0.12}
             tag="Learning Path"
@@ -254,17 +266,6 @@ const About = () => {
             light={true}
           />
 
-          <HoverCard
-            delay={0}
-            tag="Business Path"
-            title="AI for Business"
-            description="We work with a small number of companies at a time to build AI systems that fit how they actually operate - content pipelines, workflow automation, AI-assisted lead generation, and team training. Deep work, not surface-level consulting."
-            cta="Start a Conversation"
-            onCtaClick={() => document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" })}
-            imageSrc={BUSINESS_IMAGE}
-            imagePlaceholder="linear-gradient(135deg, #071a10 0%, #0d3d25 50%, #1a5c35 100%)"
-            light={false}
-          />
         </div>
       </div>
     </section>

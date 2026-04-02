@@ -37,7 +37,7 @@ const Navbar = () => {
 	return (
 		<nav className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 md:px-8 pt-4">
 			<div
-				className={`${scrolled ? 'nav-color-scroll' : 'nav-color'} max-w-300 w-full flex items-center justify-between px-6 md:px-10 transition-all duration-500`}
+				className={`${scrolled ? 'nav-color-scroll' : 'nav-color'} max-w-300 w-full relative flex items-center justify-between px-6 md:px-10 transition-all duration-500`}
 				style={{
 					height: 64,
 					backdropFilter: 'blur(24px) saturate(1.4)',
@@ -50,8 +50,8 @@ const Navbar = () => {
 					elyst AI
 				</span>
 
-				{/* Desktop nav */}
-				<div className="hidden md:flex items-center gap-8">
+				{/* Desktop nav - absolutely centered */}
+				<div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
 					{navLinks.map((link) => (
 						<button
 							key={link}
@@ -75,31 +75,33 @@ const Navbar = () => {
 					))}
 				</div>
 
-				<button
-					onClick={() => window.open('#', '_blank')}
-					className="hidden md:flex items-center justify-center font-body font-bold text-[0.95rem] bg-white text-primary rounded-button px-7 min-h-12 hover:opacity-90 transition-opacity cursor-pointer"
-				>
-					Join the Elyst AI Circle →
-				</button>
+				<div className="flex items-center justify-end">
+					<button
+						onClick={() => window.open('#', '_blank')}
+						className="hidden md:flex items-center justify-center font-body font-bold text-[0.95rem] bg-white text-primary rounded-button px-7 min-h-12 hover:opacity-90 transition-opacity cursor-pointer"
+					>
+						Join the Elyst AI Circle →
+					</button>
 
-				{/* Mobile hamburger */}
-				<button
-					onClick={() => setMobileOpen(!mobileOpen)}
-					className="md:hidden min-w-12 min-h-12 flex items-center justify-center"
-					aria-label="Toggle menu"
-				>
-					<div className="flex flex-col gap-1.5">
-						<span
-							className={`block w-6 h-0.5 ${scrolled ? 'bg-[#03624cd9] text-white' : 'bg-white text-primary'} transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`}
-						/>
-						<span
-							className={`block w-6 h-0.5 ${scrolled ? 'bg-[#03624cd9]' : 'bg-white'} transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`}
-						/>
-						<span
-							className={`block w-6 h-0.5 ${scrolled ? 'bg-[#03624cd9] text-white' : 'bg-white text-primary'} transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`}
-						/>
-					</div>
-				</button>
+					{/* Mobile hamburger */}
+					<button
+						onClick={() => setMobileOpen(!mobileOpen)}
+						className="md:hidden min-w-12 min-h-12 flex items-center justify-center"
+						aria-label="Toggle menu"
+					>
+						<div className="flex flex-col gap-1.5">
+							<span
+								className={`block w-6 h-0.5 ${scrolled ? 'bg-[#03624cd9] text-white' : 'bg-white text-primary'} transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`}
+							/>
+							<span
+								className={`block w-6 h-0.5 ${scrolled ? 'bg-[#03624cd9]' : 'bg-white'} transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`}
+							/>
+							<span
+								className={`block w-6 h-0.5 ${scrolled ? 'bg-[#03624cd9] text-white' : 'bg-white text-primary'} transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`}
+							/>
+						</div>
+					</button>
+				</div>
 			</div>
 
 			{/* Mobile menu */}
@@ -144,7 +146,7 @@ const Navbar = () => {
 								onClick={() => { setMobileOpen(false); window.open('#', '_blank') }}
 								className="font-body font-bold text-sm bg-white text-primary rounded-button px-6 min-h-12 mt-2 hover:opacity-90 transition-opacity cursor-pointer"
 							>
-								Join the Elyst AI Circle →
+								Join →
 							</button>
 						</div>
 					</motion.div>
