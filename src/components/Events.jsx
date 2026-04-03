@@ -67,7 +67,7 @@ const Events = () => {
             >
               {/* Dark gradient overlay for readability */}
               {event.image && (
-                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10 rounded-card" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/80 to-black/60 rounded-card" />
               )}
               <div
                 className="relative z-10 p-8 flex flex-col h-full gap-4"
