@@ -38,7 +38,7 @@ const CommunityJoin = () => (
   >
     <div className="max-w-275 mx-auto px-(--section-px)" style={{ paddingTop: 96 }}>
 
-      <motion.div {...anim(0)} style={{ marginBottom: 52 }}>
+      <motion.div {...anim(0)} style={{ marginBottom: 52, textAlign: 'center' }}>
         <span style={{
           fontFamily: 'var(--font-body)',
           fontSize: '0.72rem',
@@ -55,16 +55,15 @@ const CommunityJoin = () => (
           className="font-display font-bold"
           style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', color: '#0d1a10', lineHeight: 1.15, marginBottom: 10 }}
         >
-          Three steps.{' '}
-          <span style={{ color: '#1a7a4a' }}>Less than a week.</span>
+          Three simple steps.
         </h2>
-        <p className="font-body" style={{ color: '#5a7a65', fontSize: '1rem', maxWidth: 420 }}>
+        <p className="font-body" style={{ color: '#5a7a65', fontSize: '1rem', maxWidth: 420, margin: '0 auto' }}>
           No long waitlists. No complex onboarding. The whole thing is designed to be quick.
         </p>
       </motion.div>
 
       {/* Steps */}
-      <div className="steps-grid" style={{ display: 'grid', gap: 14, marginBottom: 52, position: 'relative' }}>
+      <div className="steps-grid" style={{ display: 'grid', gap: 14, position: 'relative' }}>
         {/* Connector line on desktop */}
         <div
           className="steps-connector"
@@ -120,46 +119,6 @@ const CommunityJoin = () => (
         ))}
       </div>
 
-      {/* Apply CTA */}
-      <motion.div
-        {...anim(0.4)}
-        style={{
-          background: 'linear-gradient(135deg, #0d3d25, #1a5c35)',
-          borderRadius: 20,
-          padding: 'clamp(32px, 5vw, 48px)',
-          textAlign: 'center',
-          border: '1px solid rgba(46,200,102,0.2)',
-          boxShadow: '0 12px 48px rgba(13,61,37,0.25)',
-        }}
-      >
-        <h3
-          className="font-display font-bold text-white"
-          style={{ fontSize: 'clamp(1.3rem, 3vw, 1.8rem)', marginBottom: 10 }}
-        >
-          Ready to be in the right room?
-        </h3>
-        <p className="font-body" style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.95rem', marginBottom: 24 }}>
-          Founding spots are limited. The earlier you join, the better the rate you lock in.
-        </p>
-        <a
-          href="#"
-          className="font-body font-bold"
-          style={{
-            display: 'inline-block',
-            background: '#ffffff',
-            color: '#0d3d25',
-            borderRadius: 999,
-            padding: '14px 36px',
-            textDecoration: 'none',
-            fontSize: '0.97rem',
-            transition: 'all 0.2s',
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = '#2ec866'; e.currentTarget.style.color = '#ffffff' }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = '#ffffff'; e.currentTarget.style.color = '#0d3d25' }}
-        >
-          Apply Now — It's Free to Apply →
-        </a>
-      </motion.div>
     </div>
 
     <style>{`

@@ -9,17 +9,17 @@ const anim = (delay = 0) => ({
 })
 
 const standardFeatures = [
-  { icon: '📡', text: 'Weekly AI Signal' },
-  { icon: '🎙️', text: 'Monthly Catchup Call' },
-  { icon: '📚', text: 'The Content Library' },
-  { icon: '🤝', text: 'The Network' },
-  { icon: '🏷️', text: 'Deals in AI' },
-  { icon: '🎫', text: 'Member-Only Events' },
+  { text: 'Weekly AI Signal' },
+  { text: 'Monthly Catchup Call' },
+  { text: 'The Content Library' },
+  { text: 'The Network' },
+  { text: 'Deals in AI' },
+  { text: 'Member-Only Events' },
 ]
 
 const earlyBirdExtras = [
-  { icon: '🔑', text: 'Priority Access and Offers' },
-  { icon: '🔒', text: 'Your Rate Stays Locked Forever' },
+  { text: 'Priority Access and Offers' },
+  { text: 'Your Rate Stays Locked Forever' },
 ]
 
 function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta, highlighted }) {
@@ -103,13 +103,12 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
       <div style={{ height: '1px', background: highlighted ? 'rgba(255,255,255,0.08)' : '#e4f2e9', marginBottom: 20 }} />
 
       <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 auto', display: 'flex', flexDirection: 'column', gap: 12 }}>
-        {features.map(({ icon, text }) => (
+        {features.map(({ text }) => (
           <li
             key={text}
-            className="font-body text-sm"
-            style={{ display: 'flex', alignItems: 'center', gap: 10, color: highlighted ? 'rgba(255,255,255,0.8)' : '#1a3a28' }}
+            className="font-body"
+            style={{ display: 'flex', alignItems: 'center', gap: 10, color: highlighted ? 'rgba(255,255,255,0.8)' : '#1a3a28', fontSize: '1rem' }}
           >
-            <span style={{ color: highlighted ? '#2ec866' : '#1a7a4a', fontSize: '0.9rem' }}>{icon}</span>
             {text}
           </li>
         ))}
@@ -122,13 +121,12 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
             {extraLabel}
           </div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {extras.map(({ icon, text }) => (
+            {extras.map(({ text }) => (
               <li
                 key={text}
-                className="font-body text-sm font-bold"
-                style={{ display: 'flex', alignItems: 'center', gap: 10, color: highlighted ? '#ffffff' : '#0d1a10' }}
+                className="font-body font-bold"
+                style={{ display: 'flex', alignItems: 'center', gap: 10, color: highlighted ? '#ffffff' : '#0d1a10', fontSize: '1rem' }}
               >
-                <span style={{ fontSize: '0.9rem' }}>{icon}</span>
                 {text}
               </li>
             ))}
