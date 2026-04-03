@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/api/beehiiv/(.*)", "destination": "/api/beehiiv/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
