@@ -53,7 +53,7 @@ const CommunityForWho = () => (
         className="font-body"
         style={{ color: '#4a6a55', fontSize: '1rem', lineHeight: 1.8, maxWidth: 720, marginBottom: 48, textAlign: 'center', margin: '0 auto 48px' }}
       >
-        If you work on a computer, use AI occasionally but haven't made it stick, and feel like the gap between where you are and where you should be is quietly growing — you are exactly who this was built for.
+        If you work on a computer, use AI occasionally but feel like you are lagging behind in AI, this circle is for you.
       </motion.p>
 
       {/* 2-column cards */}

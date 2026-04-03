@@ -16,8 +16,8 @@ const CommunityFinalCTA = () => (
         style={{
           position: 'relative',
           overflow: 'hidden',
-          background: 'linear-gradient(135deg, #0d3d25 0%, #1a5c35 50%, #0d3d25 100%)',
-          border: '1px solid rgba(46,200,102,0.25)',
+          background: '#000000',
+          border: '1px solid rgba(255,255,255,0.1)',
           borderRadius: 28,
           padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 72px)',
           textAlign: 'center',
@@ -53,8 +53,7 @@ const CommunityFinalCTA = () => (
             className="font-display font-bold text-white"
             style={{ fontSize: 'clamp(1.6rem, 4vw, 2.8rem)', lineHeight: 1.2, marginBottom: 16, maxWidth: 700, margin: '0 auto 16px' }}
           >
-            The earlier you are in, the better your position.{' '}
-            <span style={{ color: '#2ec866' }}>That is true of AI, and it is true of this Circle.</span>
+            Everyone in this circle is <span style={{ color: '#2ec866' }}>moving.</span> The only question is whether you are <span style={{ color: '#2ec866' }}>in it</span> or watching from outside.
           </h2>
           <p
             className="font-body"

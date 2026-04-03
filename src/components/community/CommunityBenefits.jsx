@@ -80,6 +80,7 @@ const CommunityBenefits = () => (
                 paddingLeft: 24,
                 paddingTop: 4,
                 paddingBottom: 4,
+                textAlign: 'left',
               }}
             >
               <div className="font-display font-bold" style={{ fontSize: '1.05rem', color: '#0d1a10', marginBottom: 8, lineHeight: 1.3 }}>
@@ -146,7 +147,6 @@ const CommunityBenefits = () => (
           padding: '6px 14px',
           marginBottom: 20,
         }}>
-          <span style={{ fontSize: '0.85rem' }}>⭐</span>
           <span style={{
             fontFamily: 'var(--font-body)',
             fontSize: '0.7rem',
@@ -173,16 +173,14 @@ const CommunityBenefits = () => (
         <div className="founding-perks-grid" style={{ display: 'grid', gap: 14 }}>
           {[
             {
-              icon: '🔑',
               title: 'Priority Access and Offers',
               desc: 'Every time Elyst AI launches something new, founding members get an exclusive rate that is not available to anyone else.',
             },
             {
-              icon: '🔒',
               title: 'Your Rate, Locked Forever',
               desc: 'The price you join at is the price you pay, forever. Whatever the Circle costs later, your rate never changes.',
             },
-          ].map(({ icon, title, desc }) => (
+          ].map(({ title, desc }) => (
             <div
               key={title}
               style={{
@@ -190,19 +188,13 @@ const CommunityBenefits = () => (
                 border: '1px solid rgba(255,180,50,0.18)',
                 borderRadius: 14,
                 padding: '18px 20px',
-                display: 'flex',
-                gap: 14,
-                alignItems: 'flex-start',
               }}
             >
-              <span style={{ fontSize: '1.2rem', flexShrink: 0 }}>{icon}</span>
-              <div>
-                <div className="font-display font-bold" style={{ color: '#ffb432', fontSize: '0.95rem', marginBottom: 5 }}>
-                  {title}
-                </div>
-                <div className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.65 }}>
-                  {desc}
-                </div>
+              <div className="font-display font-bold" style={{ color: '#ffb432', fontSize: '0.95rem', marginBottom: 5 }}>
+                {title}
+              </div>
+              <div className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.65 }}>
+                {desc}
               </div>
             </div>
           ))}
