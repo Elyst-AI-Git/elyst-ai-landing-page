@@ -72,7 +72,7 @@ const Hero = () => {
 					initial={{ opacity: 0, y: 24 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.25, duration: 0.6, ease: 'easeOut' }}
-					className="font-display font-bold text-hero text-white leading-[1.05] mb-6 whitespace-nowrap max-md:whitespace-normal max-md:text-[clamp(1.9rem,10vw,2.8rem)] max-md:leading-[1.12] max-md:px-1"
+					className="font-display font-bold text-hero text-white leading-[1.05] mb-6 whitespace-nowrap w-max mx-auto max-md:whitespace-normal max-md:w-auto max-md:text-center max-md:text-[clamp(1.9rem,10vw,2.8rem)] max-md:leading-[1.12] max-md:px-1"
 				>
 					AI Won't Replace You.
 					<br />
@@ -94,18 +94,17 @@ const Hero = () => {
 					transition={{ delay: 0.55, duration: 0.6, ease: 'easeOut' }}
 					className="flex flex-col sm:flex-row items-center justify-center gap-4"
 				>
-					<button
+					{/* <button
 						className="font-body font-bold text-sm bg-white text-primary rounded-button h-13 px-8 hover:opacity-90 transition-opacity min-w-12 cursor-pointer"
 						onClick={() => navigate('/community')}
 					>
 						Join the Elyst AI Circle →
-					</button>
+					</button> */}
 					<button
-						className="font-body font-bold text-sm text-white/90 hover:gap-3 transition-all duration-200 flex items-center gap-2 min-h-12 cursor-pointer"
+						className="font-body font-bold text-[0.95rem] bg-white text-primary rounded-button px-7 min-h-12 hover:opacity-90 transition-opacity cursor-pointer flex items-center justify-center"
 						onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}
 					>
-						See What's Coming{' '}
-						<span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+						See What's Coming →
 					</button>
 				</motion.div>
 			</div>

@@ -9,32 +9,26 @@ const anim = (delay = 0) => ({
 
 const standardDeliverables = [
   {
-    icon: '📡',
     title: 'Weekly AI Signal',
-    desc: 'AI updates that actually matter to how you work — pulled using a custom-built system and filtered by the team.',
+    desc: 'AI updates that actually matter to how you work — pulled using a custom-built system and filtered by the team. Not what trended. What matters.',
   },
   {
-    icon: '🎙️',
     title: 'Monthly Catchup',
-    desc: 'A monthly call on where things are heading and what\'s shifting. Less formal session, more honest conversation.',
+    desc: 'A monthly call on where things are heading and what\'s shifting. Less formal session, more honest conversation about what\'s actually changing.',
   },
   {
-    icon: '🤝',
     title: 'The Network',
     desc: 'Professionals and founders figuring out the same things as you — who ask better questions than most communities ever produce.',
   },
   {
-    icon: '📚',
     title: 'The Content Library',
-    desc: 'AI workflows, practical guides, and step-by-step processes built specifically for how this community works.',
+    desc: 'AI workflows, practical guides, and step-by-step processes built specifically for how this community works. Not overviews — actual walkthroughs.',
   },
   {
-    icon: '🎫',
     title: 'Member-Only Events',
     desc: 'Events and sessions never announced publicly — built exclusively for people inside the Circle.',
   },
   {
-    icon: '🏷️',
     title: 'Deals in AI',
     desc: 'Curated discounts on AI tools and products we\'ve actually evaluated and think are worth your money.',
   },
@@ -43,117 +37,96 @@ const standardDeliverables = [
 const CommunityBenefits = () => (
   <section
     id="benefits"
-    style={{
-      background: '#0a1210',
-      padding: '0 0 96px',
-    }}
+    style={{ background: '#ffffff', padding: '96px 0' }}
   >
-    <div className="max-w-275 mx-auto px-(--section-px)" style={{ paddingTop: 96 }}>
+    <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 clamp(24px, 6vw, 100px)' }}>
+      <div className="benefits-layout">
 
-      {/* Section heading */}
-      <motion.div {...anim(0)} style={{ marginBottom: 56 }}>
-        <span style={{
-          fontFamily: 'var(--font-body)',
-          fontSize: '0.72rem',
-          fontWeight: 800,
-          color: '#2ec866',
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          display: 'block',
-          marginBottom: 12,
-        }}>
-          What's inside the Circle
-        </span>
-        <h2
-          className="font-display font-bold text-white"
-          style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', lineHeight: 1.15, marginBottom: 10 }}
-        >
-          Built to solve{' '}
-          <span style={{ color: '#2ec866' }}>real problems.</span>
-        </h2>
-        <p
-          className="font-body"
-          style={{ color: 'rgba(255,255,255,0.45)', fontSize: '1rem', maxWidth: 480 }}
-        >
-          Everything here was decided because it solves a real problem that professionals and founders have with AI right now.
-        </p>
-      </motion.div>
-
-      {/* ── Standard Tier label ── */}
-      <motion.div {...anim(0.05)} style={{ marginBottom: 20 }}>
-        <span style={{
-          fontFamily: 'var(--font-body)',
-          fontSize: '0.7rem',
-          fontWeight: 700,
-          color: 'rgba(255,255,255,0.35)',
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-        }}>
-          Standard Tier — included in every membership
-        </span>
-      </motion.div>
-
-      {/* Deliverables 2-column grid */}
-      <div
-        className="benefits-grid"
-        style={{ display: 'grid', gap: 12, marginBottom: 80 }}
-      >
-        {standardDeliverables.map(({ icon, title, desc }, i) => (
-          <motion.div
-            key={title}
-            {...anim(0.1 + i * 0.07)}
-            style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: 16,
-              padding: '24px 22px',
-              display: 'flex',
-              gap: 16,
-              alignItems: 'flex-start',
-              transition: 'background 0.2s, border-color 0.2s',
-              cursor: 'default',
-            }}
-            whileHover={{
-              background: 'rgba(46,200,102,0.07)',
-              borderColor: 'rgba(46,200,102,0.2)',
-              transition: { duration: 0.2 },
-            }}
-          >
-            <div style={{
-              width: 40, height: 40,
-              background: 'rgba(46,200,102,0.1)',
-              borderRadius: 10,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: '1.1rem',
-              flexShrink: 0,
+        {/* Left — sticky */}
+        <div className="benefits-left">
+          <motion.div {...anim(0)}>
+            <span style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.72rem',
+              fontWeight: 800,
+              color: '#1a7a4a',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              display: 'block',
+              marginBottom: 16,
             }}>
-              {icon}
-            </div>
-            <div>
-              <div className="font-display font-bold" style={{ color: '#ffffff', fontSize: '0.95rem', marginBottom: 6 }}>
+              Standard Tier — included in every membership
+            </span>
+            <h2
+              className="font-display font-bold"
+              style={{ fontSize: 'clamp(1.9rem, 3.5vw, 3rem)', color: '#0d1a10', lineHeight: 1.15, marginBottom: 16 }}
+            >
+              What's Inside the Circle
+            </h2>
+            <p className="font-body" style={{ color: '#4a6a55', fontSize: '1rem', lineHeight: 1.75, marginBottom: 0 }}>
+              Everything here was decided because it solves a real problem that professionals and founders have with AI right now.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Right — scrollable deliverables */}
+        <div className="benefits-right">
+          {standardDeliverables.map(({ title, desc }, i) => (
+            <motion.div
+              key={title}
+              {...anim(0.1 + i * 0.07)}
+              style={{
+                borderLeft: '3px solid #2ec866',
+                paddingLeft: 24,
+                paddingTop: 4,
+                paddingBottom: 4,
+              }}
+            >
+              <div className="font-display font-bold" style={{ fontSize: '1.05rem', color: '#0d1a10', marginBottom: 8, lineHeight: 1.3 }}>
                 {title}
               </div>
-              <div className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.65 }}>
+              <div className="font-body" style={{ fontSize: '0.93rem', color: '#5a7a65', lineHeight: 1.75 }}>
                 {desc}
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
 
-      {/* ══ FOUNDING MEMBER PERKS — visually distinct block ══ */}
+      {/* Founding member perks */}
       <motion.div
         {...anim(0.15)}
         style={{
+          marginTop: 80,
           background: 'linear-gradient(135deg, #1a0e00 0%, #261400 50%, #1a0e00 100%)',
           border: '1px solid rgba(255,180,50,0.35)',
           borderRadius: 24,
           padding: 'clamp(32px, 5vw, 48px)',
-          marginBottom: 0,
           position: 'relative',
           overflow: 'hidden',
         }}
       >
+        {/* Corner ribbon */}
+        <div style={{
+          position: 'absolute',
+          top: 28,
+          right: -36,
+          width: 160,
+          textAlign: 'center',
+          transform: 'rotate(45deg)',
+          background: '#ffb432',
+          color: '#1a0e00',
+          fontFamily: 'var(--font-body)',
+          fontSize: '0.62rem',
+          fontWeight: 800,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          padding: '6px 0',
+          boxShadow: '0 2px 8px rgba(255,180,50,0.4)',
+        }}>
+          25 Spots Only
+        </div>
+
         {/* Amber glow */}
         <div style={{
           position: 'absolute', top: -60, right: -60,
@@ -238,10 +211,25 @@ const CommunityBenefits = () => (
     </div>
 
     <style>{`
-      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .benefits-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+      }
+      .benefits-left {
+        position: sticky;
+        top: 96px;
+      }
+      .benefits-right {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
       .founding-perks-grid { grid-template-columns: repeat(2, 1fr); }
-      @media (max-width: 640px) {
-        .benefits-grid { grid-template-columns: 1fr; }
+      @media (max-width: 768px) {
+        .benefits-layout { grid-template-columns: 1fr; gap: 40px; }
+        .benefits-left { position: static; }
         .founding-perks-grid { grid-template-columns: 1fr; }
       }
     `}</style>

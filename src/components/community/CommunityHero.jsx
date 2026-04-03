@@ -1,23 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-const statements = [
-  {
-    num: '01',
-    headline: 'Not smarter. Better room.',
-    body: 'Not because they are more technical. Because they are in conversations you have not been part of yet.',
-  },
-  {
-    num: '02',
-    headline: 'LinkedIn won\'t close the gap.',
-    body: 'Following more people doesn\'t move you forward. Being in the right circle does.',
-  },
-  {
-    num: '03',
-    headline: 'This is that circle.',
-    body: 'Elyst AI Circle — small by design, serious by default.',
-  },
-]
 
 const CommunityHero = () => {
   const [loaded, setLoaded] = useState(false)
@@ -111,12 +94,11 @@ const CommunityHero = () => {
           <motion.div
             {...anim(100)}
             style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 'clamp(0.9rem, 1.8vw, 1.1rem)',
-              color: 'rgba(255,255,255,0.35)',
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              marginBottom: 8,
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(1.4rem, 3.5vw, 2.2rem)',
+              fontWeight: 600,
+              color: 'rgba(255,255,255,0.55)',
+              marginBottom: 4,
             }}
           >
             The people in this circle
@@ -166,59 +148,44 @@ const CommunityHero = () => {
           </motion.div>
         </div>
 
-        {/* Statement cards — 3 columns desktop, 1 column mobile */}
-        <div
+        {/* Body paragraph */}
+        <motion.div
+          {...cardAnim(380)}
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 12,
-            marginBottom: 48,
+            maxWidth: 680,
+            margin: '0 auto 48px',
+            textAlign: 'center',
           }}
-          className="hero-cards"
         >
-          {statements.map(({ num, headline, body }, i) => (
-            <motion.div
-              key={num}
-              {...cardAnim(380 + i * 80)}
-              style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
-                borderRadius: 16,
-                padding: '24px 20px',
-                textAlign: 'left',
-              }}
-            >
-              <div style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.7rem',
-                fontWeight: 800,
-                color: '#2ec866',
-                letterSpacing: '0.12em',
-                marginBottom: 10,
-              }}>
-                {num}
-              </div>
-              <div style={{
-                fontFamily: 'var(--font-display)',
-                fontWeight: 700,
-                fontSize: '0.95rem',
-                color: '#ffffff',
-                marginBottom: 8,
-                lineHeight: 1.3,
-              }}>
-                {headline}
-              </div>
-              <div style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.82rem',
-                color: 'rgba(255,255,255,0.45)',
-                lineHeight: 1.6,
-              }}>
-                {body}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
+            color: 'rgba(255,255,255,0.55)',
+            lineHeight: 1.85,
+            margin: '0 0 20px',
+          }}>
+            At some point you noticed that the people around you seem to be getting more out of AI than you are. Not because they are smarter or more technical. Because they are somewhere you are not — in conversations you are not part of, applying things you have not seen yet.
+          </p>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
+            color: 'rgba(255,255,255,0.55)',
+            lineHeight: 1.85,
+            margin: '0 0 20px',
+          }}>
+            That gap does not close by following more people on LinkedIn. It closes by being in the right circle.
+          </p>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
+            color: 'rgba(255,255,255,0.75)',
+            lineHeight: 1.85,
+            margin: 0,
+            fontWeight: 600,
+          }}>
+            This is that circle — Elyst AI Circle.
+          </p>
+        </motion.div>
 
         {/* CTAs */}
         <motion.div
@@ -270,9 +237,6 @@ const CommunityHero = () => {
 
       <style>{`
         @keyframes heroPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.6)} }
-        @media (max-width: 640px) {
-          .hero-cards { grid-template-columns: 1fr !important; }
-        }
       `}</style>
     </section>
   )
