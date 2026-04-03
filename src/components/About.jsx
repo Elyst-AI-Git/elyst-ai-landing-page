@@ -236,7 +236,7 @@ const About = () => {
             </h2>
           </div>
           <p className="font-body text-body-size text-text-secondary leading-[1.7] text-left">
-            Elyst AI works at the intersection of AI systems and professional upskilling. We build AI infrastructure for businesses and we run a community where professionals learn to apply AI to their actual work, not in theory, but in practice.
+            Elyst AI works at the intersection of AI systems and professional upskilling. We build AI systems for businesses and we run a community where professionals learn to apply AI.
           </p>
         </div>
 
@@ -255,7 +255,7 @@ const About = () => {
 
           <HoverCard
             delay={0.12}
-            tag="Learning Path"
+            tag="Upskilling Path"
             badge="Launching Soon"
             title="AI Accelerator"
             description="A curated community for professionals who want to use AI without the overwhelm. Weekly updates, live sessions, real challenges, and a network of people figuring it out alongside you. This is not a course. It is a room where serious people show up and do the work."

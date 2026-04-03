@@ -85,7 +85,7 @@ const Hero = () => {
 					transition={{ delay: 0.4, duration: 0.6, ease: 'easeOut' }}
 					className="font-body text-body-size text-white/75 max-w-140 mx-auto mb-10 leading-relaxed max-md:text-[0.95rem] max-md:max-w-[92vw]"
 				>
-					Elyst AI helps professionals and businesses put AI to actual use, not just talk about it. Through a curated AI community, live AI challenges and systems built for how you work, we help you adapt to the AI era.
+					Elyst AI helps professionals and businesses put AI to actual use, not just talk about it, we help you adapt to the AI era.
 				</motion.p>
 
 				<motion.div

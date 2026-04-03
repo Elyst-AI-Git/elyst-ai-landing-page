@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import aiYathra1 from '../assets/AI Yathra.png'
+import aiYathra2 from '../assets/AI yathra 2.0.png'
 
 const events = [
   {
@@ -7,16 +9,19 @@ const events = [
     title: 'AI Yathra 1.0',
     description:
       'Our first public GenAI cohort, a 3-day virtual program that brought together professionals and early adopters to build with AI from scratch.',
+    image: aiYathra1,
   },
   {
     tag: 'Completed',
     tagStyle: 'bg-emerald-100 text-emerald-700',
     title: 'AI Yathra 2.0',
     description:
-      'The second cohort, bigger and more structured. Hands-on sessions, real outputs. AI Yathra 2.0 happened because the first one worked.',
+      'The second cohort, bigger and more structured. AI Yathra 2.0 was ran upon popular demand and the success of the first edition.',
+    image: aiYathra2,
+    imagePosition: 'bottom',
   },
   {
-    tag: 'Coming Soon — April 9',
+    tag: 'Coming Soon',
     tagStyle: 'bg-yellow-100 text-yellow-700',
     title: 'Launching Soon',
     description: 'Coming to you soon.',
@@ -53,21 +58,35 @@ const Events = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-              className="rounded-card overflow-hidden bg-card shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-250 flex flex-col"
+              className="rounded-card overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-250 relative flex flex-col min-h-72"
+              style={event.image ? {
+                backgroundImage: `url(${event.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: event.imagePosition || 'center',
+              } : {}}
             >
-              <div className="p-8 flex flex-col h-full gap-4">
+              {/* Dark gradient overlay for readability */}
+              {event.image && (
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/10 rounded-card" />
+              )}
+              <div
+                className="relative z-10 p-8 flex flex-col h-full gap-4"
+                style={!event.image ? { background: 'linear-gradient(135deg, #0a3d2a 0%, #083d22 40%, #1a5c3a 100%)' } : {}}
+              >
                 <span className={`font-body text-xs font-bold rounded-pill px-3 py-1 self-start ${event.tagStyle}`}>
                   {event.tag}
                 </span>
-                <h3
-                  className="font-display font-bold text-text-primary leading-tight"
-                  style={{ fontSize: 'clamp(1.15rem, 2vw, 1.4rem)' }}
-                >
-                  {event.title}
-                </h3>
-                <p className="font-body text-text-secondary leading-relaxed" style={{ fontSize: '1rem' }}>
-                  {event.description}
-                </p>
+                <div className="mt-auto flex flex-col gap-2">
+                  <h3
+                    className="font-display font-bold leading-tight text-white"
+                    style={{ fontSize: 'clamp(1.15rem, 2vw, 1.4rem)' }}
+                  >
+                    {event.title}
+                  </h3>
+                  <p className="font-body leading-relaxed text-white/80" style={{ fontSize: '1rem' }}>
+                    {event.description}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
