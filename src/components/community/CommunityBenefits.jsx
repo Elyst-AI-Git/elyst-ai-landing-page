@@ -7,98 +7,16 @@ const anim = (delay = 0) => ({
   transition: { delay, duration: 0.6, ease: 'easeOut' },
 })
 
-const standardDeliverables = [
-  {
-    title: 'Weekly AI Signal',
-    desc: 'AI updates that actually matter to how you work — pulled using a custom-built system and filtered by the team. Not what trended. What matters.',
-  },
-  {
-    title: 'Monthly Catchup',
-    desc: 'A monthly call on where things are heading and what\'s shifting. Less formal session, more honest conversation about what\'s actually changing.',
-  },
-  {
-    title: 'The Network',
-    desc: 'Professionals and founders figuring out the same things as you — who ask better questions than most communities ever produce.',
-  },
-  {
-    title: 'The Content Library',
-    desc: 'AI workflows, practical guides, and step-by-step processes built specifically for how this community works. Not overviews — actual walkthroughs.',
-  },
-  {
-    title: 'Member-Only Events',
-    desc: 'Events and sessions never announced publicly — built exclusively for people inside the Circle.',
-  },
-  {
-    title: 'Deals in AI',
-    desc: 'Curated discounts on AI tools and products we\'ve actually evaluated and think are worth your money.',
-  },
-]
-
 const CommunityBenefits = () => (
   <section
-    id="benefits"
-    style={{ background: '#ffffff', padding: '96px 0' }}
+    id="founding"
+    style={{ background: '#ffffff', padding: '80px 0' }}
   >
     <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 clamp(24px, 6vw, 100px)' }}>
-      <div className="benefits-layout">
-
-        {/* Left — sticky */}
-        <div className="benefits-left">
-          <motion.div {...anim(0)}>
-            <span style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '0.72rem',
-              fontWeight: 800,
-              color: '#1a7a4a',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              display: 'block',
-              marginBottom: 16,
-            }}>
-              Standard Tier — included in every membership
-            </span>
-            <h2
-              className="font-display font-bold"
-              style={{ fontSize: 'clamp(1.9rem, 3.5vw, 3rem)', color: '#0d1a10', lineHeight: 1.15, marginBottom: 16 }}
-            >
-              What's Inside the Circle
-            </h2>
-            <p className="font-body" style={{ color: '#4a6a55', fontSize: '1rem', lineHeight: 1.75, marginBottom: 0 }}>
-              Everything here was decided because it solves a real problem that professionals and founders have with AI right now.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Right — scrollable deliverables */}
-        <div className="benefits-right">
-          {standardDeliverables.map(({ title, desc }, i) => (
-            <motion.div
-              key={title}
-              {...anim(0.1 + i * 0.07)}
-              style={{
-                borderLeft: '3px solid #2ec866',
-                paddingLeft: 24,
-                paddingTop: 4,
-                paddingBottom: 4,
-                textAlign: 'left',
-              }}
-            >
-              <div className="font-display font-bold" style={{ fontSize: '1.05rem', color: '#0d1a10', marginBottom: 8, lineHeight: 1.3 }}>
-                {title}
-              </div>
-              <div className="font-body" style={{ fontSize: '0.93rem', color: '#5a7a65', lineHeight: 1.75 }}>
-                {desc}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
       {/* Founding member perks */}
       <motion.div
         {...anim(0.15)}
         style={{
-          marginTop: 80,
           background: 'linear-gradient(135deg, #1a0e00 0%, #261400 50%, #1a0e00 100%)',
           border: '1px solid rgba(255,180,50,0.35)',
           borderRadius: 24,
@@ -203,25 +121,8 @@ const CommunityBenefits = () => (
     </div>
 
     <style>{`
-      .benefits-layout {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-        align-items: start;
-      }
-      .benefits-left {
-        position: sticky;
-        top: 96px;
-      }
-      .benefits-right {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-      }
       .founding-perks-grid { grid-template-columns: repeat(2, 1fr); }
       @media (max-width: 768px) {
-        .benefits-layout { grid-template-columns: 1fr; gap: 40px; }
-        .benefits-left { position: static; }
         .founding-perks-grid { grid-template-columns: 1fr; }
       }
     `}</style>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const anim = (delay) => ({
   initial: { opacity: 0, y: 20 },
@@ -8,6 +9,7 @@ const anim = (delay) => ({
 });
 
 const Community = () => {
+  const navigate = useNavigate();
   return (
     <section id="community" className="py-12 md:py-16 px-(--section-px) bg-background">
       <div className="max-w-175 mx-auto">
@@ -38,7 +40,7 @@ const Community = () => {
           className="flex flex-wrap gap-4 justify-center"
         >
           <button
-            onClick={() => window.open("#", "_blank")}
+            onClick={() => navigate("/community")}
             className="group font-body font-bold text-sm bg-primary text-white rounded-button h-13 px-8 gap-2 flex items-center justify-center hover:opacity-90 transition-all duration-200 min-h-12 hover:gap-3 cursor-pointer"
           >
             Apply for a Founding Spot

@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
 const navLinks = [
-	{ label: 'About', id: 'about' },
-	{ label: 'Benefits', id: 'benefits' },
+	{ label: 'About', id: 'what-you-join' },
+	{ label: 'Who It\'s For', id: 'for-who' },
 	{ label: 'Pricing', id: 'pricing' },
 	{ label: 'Join', id: 'join' },
 ]
