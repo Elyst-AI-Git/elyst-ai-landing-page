@@ -23,7 +23,7 @@ const Footer = () => {
 										return;
 									}
                                     if (link === "Community") {
-										window.open("https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO", "_blank");
+										window.location.href = "/community";
 										return;
 									}
                                     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });

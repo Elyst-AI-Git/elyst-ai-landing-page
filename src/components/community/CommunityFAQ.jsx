@@ -26,10 +26,6 @@ const faqs = [
     a: 'Social media is a broadcast. The Circle is a room. What gets shared inside is more specific, more honest, and more useful than anything designed for a public audience. And the people you are in it with are having conversations you will not find anywhere else.',
   },
   {
-    q: 'What happens once the Early Bird spots are gone?',
-    a: 'The standard tier opens at ₹299/month with no office hours and no rate lock. The Early Bird price and everything that comes with it closes permanently once the spots fill up.',
-  },
-  {
     q: 'I am not very technical. Will I be lost?',
     a: 'The Circle is not built for people who already have it figured out — it is built for people who are in the process of figuring it out. You do not need a technical background. You need the intention to actually apply what you learn.',
   },

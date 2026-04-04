@@ -152,8 +152,8 @@ const CommunityHero = () => {
         <motion.div
           {...cardAnim(380)}
           style={{
-            maxWidth: 680,
-            margin: '0 auto 48px',
+            maxWidth: 640,
+            margin: '0 auto 0',
             textAlign: 'center',
           }}
         >
@@ -162,24 +162,46 @@ const CommunityHero = () => {
             fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
             color: 'rgba(255,255,255,0.55)',
             lineHeight: 1.85,
-            margin: '0 0 20px',
+            margin: 0,
           }}>
-            At some point you noticed that the people around you seem to be getting more out of AI than you are. Not because they are smarter or more technical. Because they are somewhere you are not — in conversations you are not part of, applying things you have not seen yet.
+            At some point, you noticed people around you getting more out of AI than you.
+            Not because they're smarter — but because they're closer to how it's actually being used.
+            In the right rooms, with the right people, applying things you haven't seen yet.
+          </p>
+        </motion.div>
+
+        {/* Punch line */}
+        <motion.div
+          {...cardAnim(460)}
+          style={{
+            maxWidth: 560,
+            margin: '28px auto 48px',
+            textAlign: 'center',
+          }}
+        >
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: 'clamp(0.93rem, 1.7vw, 1.02rem)',
+            color: 'rgba(255,255,255,0.4)',
+            lineHeight: 1.8,
+            margin: '0 0 4px',
+          }}>
+            That gap doesn't close by following more people on LinkedIn.
           </p>
           <p style={{
             fontFamily: 'var(--font-body)',
-            fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
+            fontSize: 'clamp(0.93rem, 1.7vw, 1.02rem)',
             color: 'rgba(255,255,255,0.55)',
-            lineHeight: 1.85,
-            margin: '0 0 20px',
+            lineHeight: 1.8,
+            margin: '0 0 4px',
           }}>
-            That gap does not close by following more people on LinkedIn. It closes by being in the right circle.
+            It closes by being in the right circle.
           </p>
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
-            color: 'rgba(255,255,255,0.75)',
-            lineHeight: 1.85,
+            color: 'rgba(255,255,255,0.85)',
+            lineHeight: 1.8,
             margin: 0,
             fontWeight: 600,
           }}>

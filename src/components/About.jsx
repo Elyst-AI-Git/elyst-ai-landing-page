@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import accelerator from "../assets/AI accelerator.jpg";
 import business from "../assets/AI business.jpg";
 
@@ -30,13 +31,6 @@ function HoverCard({ tag, badge, title, description, cta, onCtaClick, imageSrc, 
     transition: "opacity 0.2s",
   };
 
-  const hoverButtonStyle = {
-    ...buttonStyle,
-    padding: "10px 18px",
-    fontSize: "0.82rem",
-    alignSelf: "center",
-  };
-
   return (
     <motion.div
       {...cardAnim(delay)}
@@ -53,6 +47,7 @@ function HoverCard({ tag, badge, title, description, cta, onCtaClick, imageSrc, 
         justifyContent: "flex-end",
       }}
     >
+      {/* Background image */}
       <div
         style={{
           position: "absolute",
@@ -65,6 +60,7 @@ function HoverCard({ tag, badge, title, description, cta, onCtaClick, imageSrc, 
         }}
       />
 
+      {/* Dim overlay */}
       <div
         style={{
           position: "absolute",
@@ -76,6 +72,7 @@ function HoverCard({ tag, badge, title, description, cta, onCtaClick, imageSrc, 
         }}
       />
 
+      {/* Bottom gradient (non-hover) */}
       <div
         style={{
           position: "absolute",
@@ -86,10 +83,12 @@ function HoverCard({ tag, badge, title, description, cta, onCtaClick, imageSrc, 
           background: light
             ? "linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%)"
             : "linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%)",
+          opacity: hovered ? 0 : 1,
           transition: "opacity 0.4s ease",
         }}
       />
 
+      {/* Hover colour overlay */}
       <div
         style={{
           position: "absolute",
@@ -99,59 +98,27 @@ function HoverCard({ tag, badge, title, description, cta, onCtaClick, imageSrc, 
             : "rgba(3, 18, 10, 0.88)",
           opacity: hovered ? 1 : 0,
           transition: "opacity 0.4s ease",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-          padding: "36px 32px",
           backdropFilter: "blur(4px)",
+          pointerEvents: "none",
         }}
-      >
-        <p
-          className="font-body"
-          style={{
-            color: light ? "#0d1a10" : "rgba(255,255,255,0.85)",
-            fontSize: "0.98rem",
-            lineHeight: 1.7,
-            maxWidth: "32rem",
-            marginBottom: 24,
-          }}
-        >
-          {description}
-        </p>
-        <button
-          onClick={onCtaClick}
-          className="font-body font-bold"
-          style={hoverButtonStyle}
-          onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
-          onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
-        >
-          {cta} →
-        </button>
-      </div>
+      />
 
+      {/* Non-hover content: tag + title */}
       <div
         style={{
-          position: "relative",
+          position: "absolute",
+          inset: 0,
           zIndex: 1,
-          padding: "24px 28px 28px",
+          padding: "24px 28px 100px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          gap: 20,
-          minHeight: 460,
           opacity: hovered ? 0 : 1,
           transition: "opacity 0.3s ease",
-          pointerEvents: hovered ? "none" : "auto",
+          pointerEvents: "none",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 12,
-          }}
-        >
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <span
               style={{
@@ -192,34 +159,73 @@ function HoverCard({ tag, badge, title, description, cta, onCtaClick, imageSrc, 
           )}
         </div>
 
-        <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 18, maxWidth: "34rem" }}>
-          <h3
-            className="font-display font-bold"
-            style={{
-              fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
-              color: "#ffffff",
-              lineHeight: 1.1,
-              maxWidth: "70%",
-            }}
-          >
-            {title}
-          </h3>
-          <button
-            onClick={onCtaClick}
-            className="font-body font-bold"
-            style={buttonStyle}
-            onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
-          >
-            {cta} →
-          </button>
-        </div>
+        <h3
+          className="font-display font-bold"
+          style={{
+            fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
+            color: "#ffffff",
+            lineHeight: 1.1,
+            maxWidth: "70%",
+            marginTop: "auto",
+          }}
+        >
+          {title}
+        </h3>
+      </div>
+
+      {/* Hover content: description */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 1,
+          padding: "36px 32px 100px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+          opacity: hovered ? 1 : 0,
+          transition: "opacity 0.3s ease",
+          pointerEvents: "none",
+        }}
+      >
+        <p
+          className="font-body"
+          style={{
+            color: light ? "#0d1a10" : "rgba(255,255,255,0.85)",
+            fontSize: "0.98rem",
+            lineHeight: 1.7,
+            maxWidth: "32rem",
+          }}
+        >
+          {description}
+        </p>
+      </div>
+
+      {/* Single button — always at the same position */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 28,
+          left: 28,
+          zIndex: 2,
+        }}
+      >
+        <button
+          onClick={onCtaClick}
+          className="font-body font-bold"
+          style={buttonStyle}
+          onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
+        >
+          {cta} →
+        </button>
       </div>
     </motion.div>
   );
 }
 
 const About = () => {
+  const navigate = useNavigate();
   return (
     <section
       id="about"
@@ -260,7 +266,7 @@ const About = () => {
             title="AI Accelerator"
             description="A curated community for professionals who want to use AI without the overwhelm. Weekly updates, live sessions, real challenges, and a network of people figuring it out alongside you. This is not a course. It is a room where serious people show up and do the work."
             cta="Apply for a Founding Spot"
-            onCtaClick={() => window.open("#", "_blank")}
+            onCtaClick={() => navigate("/community")}
             imageSrc={ACCELERATOR_IMAGE}
             imagePlaceholder="linear-gradient(135deg, #00c96a 0%, #00df82 50%, #2ec866 100%)"
             light={true}

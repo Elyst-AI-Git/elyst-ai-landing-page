@@ -10,21 +10,21 @@ const anim = (delay = 0) => ({
 const cards = [
   {
     label: 'The Professional',
-    desc: 'You\'re good at what you do. You know AI is changing your field faster than most people around you are willing to admit.',
+    desc: 'You\'re good at what you do — but AI is moving faster than most people admit.',
     checks: [
-      'You\'ve tried AI tools but none of it has really stuck',
-      'You want to know what\'s actually worth your time and what isn\'t',
-      'You\'re done learning in isolation and want to be around people who are ahead',
+      'You\'ve tried tools, but nothing has really stuck',
+      'You want to know what\'s actually worth your time',
+      'You want to be around people who are ahead, not guessing',
     ],
     dark: false,
   },
   {
     label: 'The Business Owner / Founder',
-    desc: 'You\'re building something. And you\'re realising that the people who figure out AI first will have an edge that\'s very hard to close later.',
+    desc: 'You\'re building something — and you know AI will change how it works.',
     checks: [
-      'You\'re not looking for a tool recommendation — you want clarity on where to actually start',
-      'Every week you don\'t move on this, someone in your space is',
-      'You want to be in a room where people are building with AI, not just talking about it',
+      'You don\'t want more tools, you want clarity on where to start',
+      'Every week you delay, someone else moves ahead',
+      'You want to be around people actually building, not just talking',
     ],
     dark: true,
   },
