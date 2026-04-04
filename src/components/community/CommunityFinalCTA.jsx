@@ -62,7 +62,9 @@ const CommunityFinalCTA = () => (
             Early Bird spots are limited. Once they are gone, they are gone.
           </p>
           <a
-            href="#"
+            href="https://forms.gle/fSmbvXiRoAqLK3ky7"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-body font-bold"
             style={{
               display: 'inline-block',

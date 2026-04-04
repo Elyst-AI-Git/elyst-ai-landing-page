@@ -135,7 +135,10 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
       )}
 
       <a
-        href="#"
+        href={highlighted ? 'https://forms.gle/fSmbvXiRoAqLK3ky7' : undefined}
+        target={highlighted ? '_blank' : undefined}
+        rel={highlighted ? 'noopener noreferrer' : undefined}
+        onClick={!highlighted ? (e) => e.preventDefault() : undefined}
         onMouseEnter={() => setBtnHover(true)}
         onMouseLeave={() => setBtnHover(false)}
         style={{
@@ -154,6 +157,7 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
           fontSize: '0.95rem',
           textDecoration: 'none',
           transition: 'all 0.2s',
+          cursor: highlighted ? 'pointer' : 'default',
         }}
       >
         {cta}

@@ -154,7 +154,9 @@ const CommunityHero = () => {
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12, marginBottom: 48 }}
         >
           <a
-            href="#"
+            href="https://forms.gle/fSmbvXiRoAqLK3ky7"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-body font-bold"
             style={{
               background: '#2ec866',
