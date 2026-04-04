@@ -10,7 +10,7 @@ const anim = (delay = 0) => ({
 const features = [
   {
     title: 'Weekly AI Signal',
-    desc: 'AI updates that actually matter to your work — filtered, not trending.',
+    desc: 'AI updates that matter to your work — filtered, not trending.',
   },
   {
     title: 'Monthly Catchup',
@@ -18,19 +18,19 @@ const features = [
   },
   {
     title: 'The Network',
-    desc: 'People building with AI — asking better questions, sharing real insights.',
+    desc: 'People building with AI — sharing real insights, not noise.',
   },
   {
     title: 'The Content Library',
-    desc: 'Real workflows and step-by-step systems. No surface-level guides.',
+    desc: 'Step-by-step workflows, not surface-level guides.',
   },
   {
     title: 'Member-Only Events',
-    desc: 'Private sessions and discussions only for Circle members.',
+    desc: 'Private sessions only for Circle members.',
   },
   {
     title: 'Deals in AI',
-    desc: 'Curated discounts on tools that are actually worth using.',
+    desc: 'Curated discounts on tools actually worth using.',
   },
 ]
 
@@ -46,38 +46,40 @@ const CommunityAbout = () => (
         <motion.div {...anim(0)} className="about-left">
           <h2
             className="font-display font-bold"
-            style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', color: '#0d1a10', lineHeight: 1.15, marginBottom: 0 }}
+            style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', color: '#0d1a10', lineHeight: 1.15, marginBottom: 24 }}
           >
             What you're actually joining
           </h2>
-          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1rem', lineHeight: 1.85, margin: '0 0 8px' }}>
+          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 16px' }}>
             Elyst AI Circle is a private, paid WhatsApp community for people actively trying to get ahead of the AI shift.
           </p>
-          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1rem', lineHeight: 1.85, margin: '0 0 8px' }}>
-            Not by consuming more content — but by seeing how it's actually being used, every week.
+          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 20px' }}>
+            Not by consuming more content — but by seeing how it's actually being used every week.
           </p>
-          <p className="font-body" style={{ color: '#0d3d25', fontSize: '1rem', lineHeight: 1.85, margin: 0, fontWeight: 600 }}>
+          <p className="font-body" style={{ color: '#0d3d25', fontSize: '1.02rem', lineHeight: 1.9, margin: 0, fontWeight: 700 }}>
             Small by design. Intentional by default.
           </p>
         </motion.div>
 
-        {/* Right — feature list */}
+        {/* Right — 2×3 card grid */}
         <div className="about-right">
           {features.map(({ title, desc }, i) => (
             <motion.div
               key={title}
-              {...anim(0.1 + i * 0.07)}
+              {...anim(0.08 + i * 0.06)}
               style={{
-                borderLeft: '3px solid #2ec866',
-                paddingLeft: 24,
-                paddingTop: 4,
-                paddingBottom: 4,
+                background: '#f8fbf9',
+                border: '1.5px solid #e4f0e9',
+                borderRadius: 14,
+                padding: '18px 20px',
+                transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
+              whileHover={{ boxShadow: '0 4px 16px rgba(13,61,37,0.08)', transition: { duration: 0.2 } }}
             >
-              <div className="font-display font-bold" style={{ fontSize: '1.05rem', color: '#0d1a10', marginBottom: 6, lineHeight: 1.3 }}>
+              <div className="font-display font-bold" style={{ fontSize: '0.98rem', color: '#0d1a10', marginBottom: 6, lineHeight: 1.3 }}>
                 {title}
               </div>
-              <div className="font-body" style={{ fontSize: '0.93rem', color: '#5a7a65', lineHeight: 1.75 }}>
+              <div className="font-body" style={{ fontSize: '0.9rem', color: '#5a7a65', lineHeight: 1.7 }}>
                 {desc}
               </div>
             </motion.div>
@@ -90,22 +92,26 @@ const CommunityAbout = () => (
       .about-layout {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 48px;
-        align-items: center;
+        gap: 64px;
+        align-items: start;
       }
       .about-left {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        position: sticky;
+        top: 96px;
       }
       .about-right {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
       }
-      @media (max-width: 768px) {
+      @media (max-width: 900px) {
         .about-layout { grid-template-columns: 1fr; gap: 40px; }
-        .about-left { gap: 24px; }
+        .about-left { position: static; }
+      }
+      @media (max-width: 480px) {
+        .about-right { grid-template-columns: 1fr; }
       }
     `}</style>
   </section>
