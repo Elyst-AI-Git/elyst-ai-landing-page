@@ -23,7 +23,7 @@ const Footer = () => {
 										return;
 									}
                                     if (link === "Community") {
-										window.location.href = "/community";
+										window.location.href = "/circle";
 										return;
 									}
                                     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });

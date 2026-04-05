@@ -61,7 +61,7 @@ const Navbar = () => {
 
 				<div className="flex items-center justify-end">
 					<button
-						onClick={() => navigate('/community')}
+						onClick={() => navigate('/circle')}
 						className="hidden md:flex items-center justify-center font-body font-bold text-[0.95rem] bg-white text-primary rounded-button px-7 min-h-12 hover:opacity-90 transition-opacity cursor-pointer"
 					>
 						Join the Elyst AI Circle →
@@ -121,7 +121,7 @@ const Navbar = () => {
 								</button>
 							))}
 							<button
-								onClick={() => { setMobileOpen(false); navigate('/community') }}
+								onClick={() => { setMobileOpen(false); navigate('/circle') }}
 								className="font-body font-bold text-sm bg-white text-primary rounded-button px-6 min-h-12 mt-2 hover:opacity-90 transition-opacity cursor-pointer"
 							>
 								Join →

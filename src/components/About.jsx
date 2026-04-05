@@ -266,7 +266,7 @@ const About = () => {
             title="AI Accelerator"
             description="A curated community for professionals who want to use AI without the overwhelm. Weekly updates, live sessions, real challenges, and a network of people figuring it out alongside you. This is not a course. It is a room where serious people show up and do the work."
             cta="Apply for a Founding Spot"
-            onCtaClick={() => navigate("/community")}
+            onCtaClick={() => navigate("/circle")}
             imageSrc={ACCELERATOR_IMAGE}
             imagePlaceholder="linear-gradient(135deg, #00c96a 0%, #00df82 50%, #2ec866 100%)"
             light={true}
