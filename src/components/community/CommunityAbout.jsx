@@ -76,10 +76,10 @@ const CommunityAbout = () => (
               }}
               whileHover={{ boxShadow: '0 4px 16px rgba(13,61,37,0.08)', transition: { duration: 0.2 } }}
             >
-              <div className="font-display font-bold" style={{ fontSize: '0.98rem', color: '#0d1a10', marginBottom: 6, lineHeight: 1.3 }}>
+              <div className="font-display font-bold" style={{ fontSize: '0.98rem', color: '#0d1a10', marginBottom: 6, lineHeight: 1.3, textAlign: 'left' }}>
                 {title}
               </div>
-              <div className="font-body" style={{ fontSize: '0.9rem', color: '#5a7a65', lineHeight: 1.7 }}>
+              <div className="font-body" style={{ fontSize: '0.9rem', color: '#5a7a65', lineHeight: 1.7, textAlign: 'left' }}>
                 {desc}
               </div>
             </motion.div>

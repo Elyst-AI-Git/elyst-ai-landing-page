@@ -9,7 +9,7 @@ const anim = (delay = 0) => ({
 
 const cards = [
   {
-    label: 'The Professional',
+    label: 'Professionals',
     desc: 'You\'re good at what you do — but AI is moving faster than most people admit.',
     checks: [
       'You\'ve tried tools, but nothing has really stuck',
@@ -19,7 +19,7 @@ const cards = [
     dark: false,
   },
   {
-    label: 'The Business Owner / Founder',
+    label: 'Founders',
     desc: 'You\'re building something — and you know AI will change how it works.',
     checks: [
       'You don\'t want more tools, you want clarity on where to start',
@@ -79,6 +79,7 @@ const CommunityForWho = () => (
                 lineHeight: 1.15,
                 marginBottom: 20,
                 letterSpacing: '-0.01em',
+                textAlign: 'left',
               }}
             >
               {label}
