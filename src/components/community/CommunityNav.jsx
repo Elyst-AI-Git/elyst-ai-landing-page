@@ -13,6 +13,8 @@ const CommunityNav = () => {
 	const navigate = useNavigate()
 	const [mobileOpen, setMobileOpen] = useState(false)
 
+	const APPLY_URL = 'https://forms.gle/fSmbvXiRoAqLK3ky7'
+
 	const scrollTo = (id) => {
 		setMobileOpen(false)
 		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -52,12 +54,15 @@ const CommunityNav = () => {
 				</div>
 
 				<div className="flex items-center justify-end">
-					<button
-						onClick={() => scrollTo('join')}
+					<a
+						href={APPLY_URL}
+						target="_blank"
+						rel="noopener noreferrer"
 						className="hidden md:flex items-center justify-center font-body font-bold text-[0.95rem] bg-white text-primary rounded-button px-7 min-h-12 hover:opacity-90 transition-opacity cursor-pointer"
+						style={{ textDecoration: 'none' }}
 					>
 						Apply Now →
-					</button>
+					</a>
 
 					{/* Mobile hamburger */}
 					<button
@@ -100,12 +105,16 @@ const CommunityNav = () => {
 									{label}
 								</button>
 							))}
-							<button
-								onClick={() => { setMobileOpen(false); scrollTo('join') }}
-								className="font-body font-bold text-sm bg-white text-primary rounded-button px-6 min-h-12 mt-2 hover:opacity-90 transition-opacity cursor-pointer"
+							<a
+								href={APPLY_URL}
+								target="_blank"
+								rel="noopener noreferrer"
+								onClick={() => setMobileOpen(false)}
+								className="font-body font-bold text-sm bg-white text-primary rounded-button px-6 min-h-12 mt-2 hover:opacity-90 transition-opacity cursor-pointer flex items-center justify-center"
+								style={{ textDecoration: 'none' }}
 							>
 								Apply →
-							</button>
+							</a>
 						</div>
 					</motion.div>
 				)}

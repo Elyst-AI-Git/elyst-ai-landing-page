@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import CommunityNav from '../components/community/CommunityNav'
 import CommunityHero from '../components/community/CommunityHero'
 import CommunityAbout from '../components/community/CommunityAbout'
@@ -10,6 +11,8 @@ import CommunityFinalCTA from '../components/community/CommunityFinalCTA'
 import Footer from '../components/Footer'
 
 const CommunityPage = () => {
+  useEffect(() => { window.scrollTo(0, 0) }, [])
+
   return (
     <>
       <CommunityNav />

@@ -90,7 +90,7 @@ const CommunityHero = () => {
         </motion.div>
 
         {/* Headline — 3-tier visual hierarchy */}
-        <div style={{ marginBottom: 56 }}>
+        <div style={{ marginBottom: 32 }}>
           <motion.div
             {...anim(100)}
             style={{
@@ -148,11 +148,52 @@ const CommunityHero = () => {
           </motion.div>
         </div>
 
+        {/* Primary CTA */}
+        <motion.div
+          {...anim(320)}
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12, marginBottom: 48 }}
+        >
+          <a
+            href="https://forms.gle/fSmbvXiRoAqLK3ky7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body font-bold"
+            style={{
+              background: '#2ec866',
+              color: '#060d09',
+              borderRadius: 999,
+              padding: '15px 36px',
+              fontSize: '1rem',
+              textDecoration: 'none',
+              transition: 'opacity 0.2s',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.88' }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
+          >
+            Apply for a Founding Spot →
+          </a>
+          <a
+            href="#what-you-join"
+            className="font-body"
+            style={{
+              color: 'rgba(255,255,255,0.38)',
+              fontSize: '0.85rem',
+              textDecoration: 'none',
+              letterSpacing: '0.02em',
+              transition: 'color 0.2s',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)' }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.38)' }}
+          >
+            See what's inside ↓
+          </a>
+        </motion.div>
+
         {/* Body paragraph */}
         <motion.div
-          {...cardAnim(380)}
+          {...cardAnim(420)}
           style={{
-            maxWidth: 640,
+            maxWidth: 620,
             margin: '0 auto 0',
             textAlign: 'center',
           }}
@@ -160,7 +201,7 @@ const CommunityHero = () => {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
-            color: 'rgba(255,255,255,0.55)',
+            color: 'rgba(255,255,255,0.5)',
             lineHeight: 1.85,
             margin: 0,
           }}>
@@ -172,17 +213,17 @@ const CommunityHero = () => {
 
         {/* Punch line */}
         <motion.div
-          {...cardAnim(460)}
+          {...cardAnim(500)}
           style={{
             maxWidth: 560,
-            margin: '28px auto 48px',
+            margin: '40px auto 0',
             textAlign: 'center',
           }}
         >
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: 'clamp(0.93rem, 1.7vw, 1.02rem)',
-            color: 'rgba(255,255,255,0.4)',
+            color: 'rgba(255,255,255,0.35)',
             lineHeight: 1.8,
             margin: '0 0 4px',
           }}>
@@ -191,7 +232,7 @@ const CommunityHero = () => {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: 'clamp(0.93rem, 1.7vw, 1.02rem)',
-            color: 'rgba(255,255,255,0.55)',
+            color: 'rgba(255,255,255,0.5)',
             lineHeight: 1.8,
             margin: '0 0 4px',
           }}>
@@ -207,53 +248,6 @@ const CommunityHero = () => {
           }}>
             This is that circle — Elyst AI Circle.
           </p>
-        </motion.div>
-
-        {/* CTAs */}
-        <motion.div
-          {...anim(620)}
-          style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}
-        >
-          <a
-            href="#"
-            className="font-body font-bold"
-            style={{
-              background: '#2ec866',
-              color: '#060d09',
-              borderRadius: 999,
-              padding: '14px 32px',
-              fontSize: '0.97rem',
-              textDecoration: 'none',
-              transition: 'opacity 0.2s',
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.88' }}
-            onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
-          >
-            Apply for a Founding Spot →
-          </a>
-          <a
-            href="#what-you-join"
-            className="font-body font-semibold"
-            style={{
-              border: '1.5px solid rgba(255,255,255,0.2)',
-              color: 'rgba(255,255,255,0.7)',
-              borderRadius: 999,
-              padding: '14px 28px',
-              fontSize: '0.97rem',
-              textDecoration: 'none',
-              transition: 'all 0.2s',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'
-              e.currentTarget.style.color = '#ffffff'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'
-              e.currentTarget.style.color = 'rgba(255,255,255,0.7)'
-            }}
-          >
-            See What's Inside ↓
-          </a>
         </motion.div>
       </div>
 

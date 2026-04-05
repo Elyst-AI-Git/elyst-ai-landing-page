@@ -84,7 +84,7 @@ const CommunityBenefits = () => (
           Founding members get more.{' '}
           <span style={{ color: '#ffb432' }}>Always.</span>
         </h3>
-        <p className="font-body" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.92rem', marginBottom: 28 }}>
+        <p className="font-body" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1rem', lineHeight: 1.75, marginBottom: 28 }}>
           These things are exclusive to founding members and they stay exclusive, no matter how large the Circle grows.
         </p>
 
@@ -111,7 +111,7 @@ const CommunityBenefits = () => (
               <div className="font-display font-bold" style={{ color: '#ffb432', fontSize: '0.95rem', marginBottom: 5 }}>
                 {title}
               </div>
-              <div className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.65 }}>
+              <div className="font-body" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', lineHeight: 1.75 }}>
                 {desc}
               </div>
             </div>

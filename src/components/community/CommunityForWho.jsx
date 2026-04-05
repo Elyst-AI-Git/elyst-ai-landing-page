@@ -74,20 +74,14 @@ const CommunityForWho = () => (
             <div
               className="font-display font-bold"
               style={{
-                fontSize: 'clamp(1.3rem, 2.5vw, 1.7rem)',
-                color: dark ? '#2ec866' : '#0d3d25',
-                lineHeight: 1.2,
-                marginBottom: 14,
+                fontSize: 'clamp(1.5rem, 2.8vw, 1.95rem)',
+                color: dark ? '#2ec866' : '#0a2e1a',
+                lineHeight: 1.15,
+                marginBottom: 20,
+                letterSpacing: '-0.01em',
               }}
             >
               {label}
-            </div>
-
-            <div
-              className="font-body"
-              style={{ fontSize: '0.95rem', color: dark ? 'rgba(255,255,255,0.6)' : '#3a5a45', lineHeight: 1.7, marginBottom: 22, fontStyle: 'italic' }}
-            >
-              {desc}
             </div>
 
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -95,7 +89,7 @@ const CommunityForWho = () => (
                 <li
                   key={c}
                   className="font-body"
-                  style={{ display: 'flex', gap: 12, alignItems: 'flex-start', color: dark ? 'rgba(255,255,255,0.85)' : '#1a3a28', fontSize: '0.95rem', lineHeight: 1.65 }}
+                  style={{ display: 'flex', gap: 12, alignItems: 'flex-start', color: dark ? 'rgba(255,255,255,0.85)' : '#1a3a28', fontSize: '1rem', lineHeight: 1.7 }}
                 >
                   <span style={{ color: dark ? '#2ec866' : '#1a7a4a', fontWeight: 700, flexShrink: 0, marginTop: 2, fontSize: '0.85rem' }}>✓</span>
                   {c}
@@ -107,11 +101,11 @@ const CommunityForWho = () => (
       </div>
 
       {/* Closing line */}
-      <motion.div {...anim(0.35)}>
-        <div style={{ borderLeft: '3px solid #2ec866', paddingLeft: 18 }}>
-          <p className="font-body" style={{ color: '#3a6a4a', fontSize: '1rem', margin: 0, lineHeight: 1.6 }}>
+      <motion.div {...anim(0.35)} style={{ marginTop: 40 }}>
+        <div style={{ borderLeft: '3px solid #2ec866', paddingLeft: 20 }}>
+          <p className="font-body" style={{ color: '#2a5a3a', fontSize: '1.08rem', margin: 0, lineHeight: 1.65, fontWeight: 500 }}>
             If either of those sounds like you,{' '}
-            <strong style={{ color: '#0d3d25' }}>the application takes two minutes.</strong>
+            <strong style={{ color: '#0a2e1a', fontWeight: 700 }}>the application takes two minutes.</strong>
           </p>
         </div>
       </motion.div>
