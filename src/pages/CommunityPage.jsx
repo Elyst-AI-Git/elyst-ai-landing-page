@@ -18,8 +18,8 @@ const CommunityPage = () => {
       <CommunityNav />
       <CommunityHero />
       <CommunityAbout />
-      <CommunityForWho />
       <CommunityBenefits />
+      <CommunityForWho />
       <CommunityPricing />
       <CommunityJoin />
       <CommunityFAQ />

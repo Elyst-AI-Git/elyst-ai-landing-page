@@ -88,17 +88,28 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
 
       <div
         className="font-display font-bold"
-        style={{ fontSize: 'clamp(2.2rem, 5vw, 3rem)', color: highlighted ? '#ffffff' : '#0d1a10', lineHeight: 1, marginBottom: 4 }}
+        style={{ fontSize: 'clamp(2.2rem, 5vw, 3rem)', color: highlighted ? '#ffffff' : '#0d1a10', lineHeight: 1, marginBottom: highlighted ? 6 : 4 }}
       >
         {price}
       </div>
 
-      <div
-        className="font-body text-sm"
-        style={{ color: highlighted ? 'rgba(255,255,255,0.4)' : '#7a9a85', marginBottom: 24 }}
-      >
-        {sub}
-      </div>
+      {highlighted ? (
+        <div style={{ marginBottom: 24 }}>
+          <div className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.55)', marginBottom: 3 }}>
+            founding access until July 15
+          </div>
+          <div className="font-body text-sm" style={{ color: '#2ec866', fontWeight: 600 }}>
+            then ₹199/month · your rate stays locked
+          </div>
+        </div>
+      ) : (
+        <div
+          className="font-body text-sm"
+          style={{ color: '#7a9a85', marginBottom: 24 }}
+        >
+          {sub}
+        </div>
+      )}
 
       <div style={{ height: '1px', background: highlighted ? 'rgba(255,255,255,0.08)' : '#e4f2e9', marginBottom: 20 }} />
 
@@ -107,8 +118,9 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
           <li
             key={text}
             className="font-body"
-            style={{ display: 'flex', alignItems: 'center', gap: 10, color: highlighted ? 'rgba(255,255,255,0.8)' : '#1a3a28', fontSize: '1rem' }}
+            style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: highlighted ? 'rgba(255,255,255,0.8)' : '#1a3a28', fontSize: '1rem' }}
           >
+            <span style={{ color: highlighted ? 'rgba(255,255,255,0.7)' : '#2ec866', fontWeight: 700, flexShrink: 0, fontSize: '0.85rem', marginTop: 3 }}>✓</span>
             {text}
           </li>
         ))}
@@ -125,8 +137,9 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
               <li
                 key={text}
                 className="font-body font-bold"
-                style={{ display: 'flex', alignItems: 'center', gap: 10, color: highlighted ? '#ffffff' : '#0d1a10', fontSize: '1rem' }}
+                style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: highlighted ? '#ffffff' : '#0d1a10', fontSize: '1rem' }}
               >
+                <span style={{ color: highlighted ? 'rgba(255,255,255,0.7)' : '#2ec866', fontWeight: 700, flexShrink: 0, fontSize: '0.85rem', marginTop: 3 }}>✓</span>
                 {text}
               </li>
             ))}
@@ -199,7 +212,7 @@ const CommunityPricing = () => (
           <PriceCard
             name="Early Bird"
             ribbon="Limited Spots"
-            price="₹199/month"
+            price="₹199"
             sub="per month · rate locked forever"
             features={standardFeatures}
             extraLabel="Plus, exclusively:"

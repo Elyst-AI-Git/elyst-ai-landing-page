@@ -68,13 +68,14 @@ const CommunityAbout = () => (
               key={title}
               {...anim(0.08 + i * 0.06)}
               style={{
-                background: '#f8fbf9',
-                border: '1.5px solid #e4f0e9',
+                background: '#f2f9f5',
+                border: '1.5px solid #cce8d8',
                 borderRadius: 14,
                 padding: '18px 20px',
+                boxShadow: '0 2px 10px rgba(46,200,102,0.08)',
                 transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
-              whileHover={{ boxShadow: '0 4px 16px rgba(13,61,37,0.08)', transition: { duration: 0.2 } }}
+              whileHover={{ boxShadow: '0 6px 20px rgba(46,200,102,0.14)', transition: { duration: 0.2 } }}
             >
               <div className="font-display font-bold" style={{ fontSize: '0.98rem', color: '#0d1a10', marginBottom: 6, lineHeight: 1.3, textAlign: 'left' }}>
                 {title}

@@ -217,6 +217,7 @@ const CommunityHero = () => {
                   color: 'rgba(0,0,0,0.5)',
                   lineHeight: 1.85,
                   margin: '0 0 24px',
+                  textAlign: 'left',
                 }}
               >
                 At some point, you noticed people around you getting more out of AI than you.
@@ -230,6 +231,7 @@ const CommunityHero = () => {
                   color: 'rgba(0,0,0,0.35)',
                   lineHeight: 1.8,
                   margin: '0 0 6px',
+                  textAlign: 'left',
                 }}
               >
                 That gap doesn't close by following more people on LinkedIn.
@@ -241,6 +243,7 @@ const CommunityHero = () => {
                   color: 'rgba(0,0,0,0.5)',
                   lineHeight: 1.8,
                   margin: '0 0 6px',
+                  textAlign: 'left',
                 }}
               >
                 It closes by being in the right circle.
@@ -253,6 +256,7 @@ const CommunityHero = () => {
                   lineHeight: 1.8,
                   margin: 0,
                   fontWeight: 600,
+                  textAlign: 'left',
                 }}
               >
                 This is that circle — Elyst AI Circle.
