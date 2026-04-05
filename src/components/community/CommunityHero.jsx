@@ -214,7 +214,7 @@ const CommunityHero = () => {
                 className="font-body"
                 style={{
                   fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
-                  color: 'rgba(0,0,0,0.5)',
+                  color: '#1a1a1a',
                   lineHeight: 1.85,
                   margin: '0 0 24px',
                   textAlign: 'left',
@@ -228,7 +228,7 @@ const CommunityHero = () => {
                 className="font-body"
                 style={{
                   fontSize: 'clamp(0.93rem, 1.7vw, 1.02rem)',
-                  color: 'rgba(0,0,0,0.35)',
+                  color: '#1a1a1a',
                   lineHeight: 1.8,
                   margin: '0 0 6px',
                   textAlign: 'left',
@@ -240,7 +240,7 @@ const CommunityHero = () => {
                 className="font-body"
                 style={{
                   fontSize: 'clamp(0.93rem, 1.7vw, 1.02rem)',
-                  color: 'rgba(0,0,0,0.5)',
+                  color: '#1a1a1a',
                   lineHeight: 1.8,
                   margin: '0 0 6px',
                   textAlign: 'left',
@@ -252,10 +252,10 @@ const CommunityHero = () => {
                 className="font-body"
                 style={{
                   fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
-                  color: '#0d1a10',
+                  color: '#000000',
                   lineHeight: 1.8,
                   margin: 0,
-                  fontWeight: 600,
+                  fontWeight: 700,
                   textAlign: 'left',
                 }}
               >
@@ -276,7 +276,7 @@ const CommunityHero = () => {
                 alt="Elyst AI Circle"
                 style={{
                   width: '100%',
-                  maxWidth: 300,
+                  maxWidth: 360,
                   height: 'auto',
                   display: 'block',
                 }}
@@ -299,7 +299,7 @@ const CommunityHero = () => {
           }
           .circle-split-right {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
           }
           @media (max-width: 768px) {

@@ -1,6 +1,6 @@
 import { Linkedin, Instagram, Facebook } from "lucide-react";
 
-const navLinks = ["About", "Events", "Blog", "Community"];
+const navLinks = ["About", "Events", /* "Blog", */ "Community"];
 
 const Footer = () => {
 	return (
@@ -18,10 +18,10 @@ const Footer = () => {
 										document.getElementById("events")?.scrollIntoView({ behavior: "smooth" });
 										return;
 									}
-									if (link === "Blog") {
-										window.open("https://elystai-newsletter.beehiiv.com/", "_blank");
-										return;
-									}
+									// if (link === "Blog") {
+									// 	window.open("https://elystai-newsletter.beehiiv.com/", "_blank");
+									// 	return;
+									// }
                                     if (link === "Community") {
 										window.location.href = "/circle";
 										return;

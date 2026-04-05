@@ -20,6 +20,7 @@ const standardFeatures = [
 const earlyBirdExtras = [
   { text: 'Priority Access and Offers' },
   { text: 'Your Rate Stays Locked Forever' },
+  { text: 'A personalized gift from us' },
 ]
 
 function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta, highlighted }) {
@@ -95,10 +96,10 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
 
       {highlighted ? (
         <div style={{ marginBottom: 24 }}>
-          <div className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.55)', marginBottom: 3 }}>
-            founding access until July 15
+          <div className="font-body text-sm" style={{ color: '#2ec866', fontWeight: 700, marginBottom: 3 }}>
+            gives you access until July 15
           </div>
-          <div className="font-body text-sm" style={{ color: '#2ec866', fontWeight: 600 }}>
+          <div className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
             then ₹199/month · your rate stays locked
           </div>
         </div>

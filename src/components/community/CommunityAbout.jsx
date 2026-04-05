@@ -14,7 +14,7 @@ const features = [
   },
   {
     title: 'Monthly Catchup',
-    desc: 'Honest conversations about what\'s changing and where things are heading.',
+    desc: 'Honest conversations about what\'s changing in AI.',
   },
   {
     title: 'The Network',
@@ -50,13 +50,13 @@ const CommunityAbout = () => (
           >
             What you're actually joining
           </h2>
-          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 16px' }}>
+          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 16px', textAlign: 'left' }}>
             Elyst AI Circle is a private, paid WhatsApp community for people actively trying to get ahead of the AI shift.
           </p>
-          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 20px' }}>
+          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 20px', textAlign: 'left' }}>
             Not by consuming more content — but by seeing how it's actually being used every week.
           </p>
-          <p className="font-body" style={{ color: '#0d3d25', fontSize: '1.02rem', lineHeight: 1.9, margin: 0, fontWeight: 700 }}>
+          <p className="font-body" style={{ color: '#0d3d25', fontSize: '1.02rem', lineHeight: 1.9, margin: 0, fontWeight: 700, textAlign: 'left' }}>
             Small by design. Intentional by default.
           </p>
         </motion.div>
