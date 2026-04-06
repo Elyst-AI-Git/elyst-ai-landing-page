@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom';
 
-const navLinks = ['Home', 'About', 'Events', 'Blog']
+const navLinks = ['Home', 'About', 'Events']
 
 const Navbar = () => {
 	const navigate = useNavigate();
@@ -43,10 +43,11 @@ const Navbar = () => {
 								if (link === 'Courses') {
 									window.open('https://elystai.course.link', '_blank')
 									return
-								} else if (link === 'Blog') {
-									window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
-									return
-								} else if (link === 'Community') {
+								// } else if (link === 'Blog') {
+								// 	window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
+								// 	return
+								// }
+							} else if (link === 'Community') {
 									window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')
 									return
 								}
@@ -106,10 +107,11 @@ const Navbar = () => {
 										if (link === 'Courses') {
 											window.open('https://elystai.course.link', '_blank')
 											return
-										} else if (link === 'Blog') {
-											window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
-											return
-										} else if (link === 'Community') {
+										// } else if (link === 'Blog') {
+										// 	window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
+										// 	return
+										// }
+										if (link === 'Community') {
 											window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')
 											return
 										}
