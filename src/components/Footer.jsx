@@ -1,6 +1,6 @@
 import { Linkedin, Instagram, Facebook } from "lucide-react";
 
-const navLinks = ["About", "Events", /* "Blog", */ "Community"];
+const navLinks = ["About", "Events", /* "Blog", */ "Elyst AI Circle"];
 
 const Footer = () => {
 	return (
@@ -22,7 +22,7 @@ const Footer = () => {
 									// 	window.open("https://elystai-newsletter.beehiiv.com/", "_blank");
 									// 	return;
 									// }
-                                    if (link === "Community") {
+                                    if (link === "Elyst AI Circle") {
 										window.location.href = "/circle";
 										return;
 									}

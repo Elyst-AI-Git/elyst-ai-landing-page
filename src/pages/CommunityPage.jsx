@@ -11,9 +11,10 @@ import CommunityFAQ from '../components/community/CommunityFAQ'
 import CommunityFinalCTA from '../components/community/CommunityFinalCTA'
 import Footer from '../components/Footer'
 
-const CIRCLE_TITLE = 'Elyst AI Circle - Join the AI Community'
-const CIRCLE_DESC = 'The Elyst AI Circle is a closed community for professionals and founders staying ahead of AI. With weekly AI signals, monthly catchups, and real conversations.'
+const CIRCLE_TITLE = 'Elyst AI Circle - Join the AI Circle'
+const CIRCLE_DESC = 'A closed community for professionals applying AI to their real work. Weekly signals, monthly catchups. 25 founding spots only.'
 const CIRCLE_URL = 'https://elystai.com/circle'
+const CIRCLE_OG_IMAGE = 'https://elystai.com/og-image.png'
 
 const CommunityPage = () => {
   useEffect(() => { window.scrollTo(0, 0) }, [])
@@ -29,9 +30,11 @@ const CommunityPage = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CIRCLE_URL} />
         <meta property="og:site_name" content="Elyst AI" />
+        <meta property="og:image" content={CIRCLE_OG_IMAGE} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={CIRCLE_TITLE} />
         <meta name="twitter:description" content={CIRCLE_DESC} />
+        <meta name="twitter:image" content={CIRCLE_OG_IMAGE} />
       </Helmet>
       <CommunityNav />
       <CommunityHero />

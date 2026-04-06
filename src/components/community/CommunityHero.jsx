@@ -85,7 +85,7 @@ const CommunityHero = () => {
             </div>
           </motion.div>
 
-          {/* Headline — 3-tier visual hierarchy */}
+          {/* Headline - 3-tier visual hierarchy */}
           <div style={{ marginBottom: 32 }}>
             <motion.div
               {...anim(100)}
@@ -202,7 +202,7 @@ const CommunityHero = () => {
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div className="circle-split-layout">
 
-            {/* Left column — paragraphs */}
+            {/* Left column - paragraphs */}
             <motion.div
               className="circle-split-left"
               initial={{ opacity: 0, y: 24 }}
@@ -221,7 +221,7 @@ const CommunityHero = () => {
                 }}
               >
                 At some point, you noticed people around you getting more out of AI than you.
-                Not because they're smarter — but because they're closer to how it's actually being used.
+                Not because they're smarter - but because they're closer to how it's actually being used.
                 In the right rooms, with the right people, applying things you haven't seen yet.
               </p>
               <p
@@ -259,11 +259,11 @@ const CommunityHero = () => {
                   textAlign: 'left',
                 }}
               >
-                This is that circle — Elyst AI Circle.
+                This is that circle - Elyst AI Circle.
               </p>
             </motion.div>
 
-            {/* Right column — Elyst AI Circle logo */}
+            {/* Right column - Elyst AI Circle logo */}
             <motion.div
               className="circle-split-right"
               initial={{ opacity: 0, y: 24 }}

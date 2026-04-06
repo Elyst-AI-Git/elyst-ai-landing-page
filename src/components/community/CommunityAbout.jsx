@@ -10,7 +10,7 @@ const anim = (delay = 0) => ({
 const features = [
   {
     title: 'Weekly AI Signal',
-    desc: 'AI updates that matter to your work — filtered, not trending.',
+    desc: 'AI updates that matter to your work - filtered, not trending.',
   },
   {
     title: 'Monthly Catchup',
@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: 'The Network',
-    desc: 'People building with AI — sharing real insights, not noise.',
+    desc: 'People building with AI - sharing real insights, not noise.',
   },
   {
     title: 'The Content Library',
@@ -42,7 +42,7 @@ const CommunityAbout = () => (
     <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 clamp(24px, 6vw, 100px)' }}>
       <div className="about-layout">
 
-        {/* Left — explanation text */}
+        {/* Left - explanation text */}
         <motion.div {...anim(0)} className="about-left">
           <h2
             className="font-display font-bold"
@@ -51,17 +51,17 @@ const CommunityAbout = () => (
             What you're actually joining
           </h2>
           <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 16px', textAlign: 'left' }}>
-            Elyst AI Circle is a private, paid WhatsApp community for people actively trying to get ahead of the AI shift.
+            Elyst AI Circle is a private, paid WhatsApp Circle for professionals who are done watching AI from the sidelines.
           </p>
           <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 20px', textAlign: 'left' }}>
-            Not by consuming more content — but by seeing how it's actually being used every week.
+            Every week, you see what is actually being built, what is being implemented, and what is working alongside others doing the same.
           </p>
           <p className="font-body" style={{ color: '#0d3d25', fontSize: '1.02rem', lineHeight: 1.9, margin: 0, fontWeight: 700, textAlign: 'left' }}>
-            Small by design. Intentional by default.
+            Small by design. Built for people who act.
           </p>
         </motion.div>
 
-        {/* Right — 2×3 card grid */}
+        {/* Right - 2×3 card grid */}
         <div className="about-right">
           {features.map(({ title, desc }, i) => (
             <motion.div
