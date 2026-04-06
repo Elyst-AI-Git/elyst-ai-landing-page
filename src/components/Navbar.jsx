@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom';
 
-const navLinks = ['Home', 'About', 'Events']
+const navLinks = ['Home', 'About', 'Events', /* 'Blog' */]
 
 const Navbar = () => {
 	const navigate = useNavigate();
@@ -16,6 +16,22 @@ const Navbar = () => {
 		}
 		const el = document.getElementById(id.toLowerCase())
 		el?.scrollIntoView({ behavior: 'smooth' })
+	}
+
+	const handleNavClick = (link) => {
+		if (link === 'Courses') {
+			window.open('https://elystai.course.link', '_blank')
+			return
+		}
+		// if (link === 'Blog') {
+		// 	window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
+		// 	return
+		// }
+		if (link === 'Community') {
+			window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')
+			return
+		}
+		scrollTo(link)
 	}
 
 	return (
@@ -39,20 +55,7 @@ const Navbar = () => {
 					{navLinks.map((link) => (
 						<button
 							key={link}
-							onClick={() => {
-								if (link === 'Courses') {
-									window.open('https://elystai.course.link', '_blank')
-									return
-								// } else if (link === 'Blog') {
-								// 	window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
-								// 	return
-								// }
-							} else if (link === 'Community') {
-									window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')
-									return
-								}
-								scrollTo(link)
-							}}
+							onClick={() => handleNavClick(link)}
 							className="font-body text-[0.95rem] text-white/85 hover:text-white transition-colors duration-200 min-h-12 flex items-center cursor-pointer"
 						>
 							{link}
@@ -103,20 +106,7 @@ const Navbar = () => {
 							{navLinks.map((link) => (
 								<button
 									key={link}
-									onClick={() => {
-										if (link === 'Courses') {
-											window.open('https://elystai.course.link', '_blank')
-											return
-										// } else if (link === 'Blog') {
-										// 	window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
-										// 	return
-										// }
-										if (link === 'Community') {
-											window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')
-											return
-										}
-										scrollTo(link)
-									}}
+									onClick={() => handleNavClick(link)}
 									className="font-body text-base text-white/85 hover:text-white transition-colors min-h-12 cursor-pointer"
 								>
 									{link}
