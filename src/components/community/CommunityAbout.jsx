@@ -14,7 +14,7 @@ const features = [
   },
   {
     title: 'Monthly Catchup',
-    desc: 'Honest conversations about what\'s changing and where things are heading.',
+    desc: 'Honest conversations about what\'s changing in AI.',
   },
   {
     title: 'The Network',
@@ -50,13 +50,13 @@ const CommunityAbout = () => (
           >
             What you're actually joining
           </h2>
-          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 16px' }}>
+          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 16px', textAlign: 'left' }}>
             Elyst AI Circle is a private, paid WhatsApp community for people actively trying to get ahead of the AI shift.
           </p>
-          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 20px' }}>
+          <p className="font-body" style={{ color: '#4a6a55', fontSize: '1.02rem', lineHeight: 1.9, margin: '0 0 20px', textAlign: 'left' }}>
             Not by consuming more content — but by seeing how it's actually being used every week.
           </p>
-          <p className="font-body" style={{ color: '#0d3d25', fontSize: '1.02rem', lineHeight: 1.9, margin: 0, fontWeight: 700 }}>
+          <p className="font-body" style={{ color: '#0d3d25', fontSize: '1.02rem', lineHeight: 1.9, margin: 0, fontWeight: 700, textAlign: 'left' }}>
             Small by design. Intentional by default.
           </p>
         </motion.div>
@@ -68,18 +68,19 @@ const CommunityAbout = () => (
               key={title}
               {...anim(0.08 + i * 0.06)}
               style={{
-                background: '#f8fbf9',
-                border: '1.5px solid #e4f0e9',
+                background: '#f2f9f5',
+                border: '1.5px solid #cce8d8',
                 borderRadius: 14,
                 padding: '18px 20px',
+                boxShadow: '0 2px 10px rgba(46,200,102,0.08)',
                 transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
-              whileHover={{ boxShadow: '0 4px 16px rgba(13,61,37,0.08)', transition: { duration: 0.2 } }}
+              whileHover={{ boxShadow: '0 6px 20px rgba(46,200,102,0.14)', transition: { duration: 0.2 } }}
             >
-              <div className="font-display font-bold" style={{ fontSize: '0.98rem', color: '#0d1a10', marginBottom: 6, lineHeight: 1.3 }}>
+              <div className="font-display font-bold" style={{ fontSize: '0.98rem', color: '#0d1a10', marginBottom: 6, lineHeight: 1.3, textAlign: 'left' }}>
                 {title}
               </div>
-              <div className="font-body" style={{ fontSize: '0.9rem', color: '#5a7a65', lineHeight: 1.7 }}>
+              <div className="font-body" style={{ fontSize: '0.9rem', color: '#5a7a65', lineHeight: 1.7, textAlign: 'left' }}>
                 {desc}
               </div>
             </motion.div>

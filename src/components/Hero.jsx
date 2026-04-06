@@ -96,7 +96,7 @@ const Hero = () => {
 				>
 					{/* <button
 						className="font-body font-bold text-sm bg-white text-primary rounded-button h-13 px-8 hover:opacity-90 transition-opacity min-w-12 cursor-pointer"
-						onClick={() => navigate('/community')}
+						onClick={() => navigate('/circle')}
 					>
 						Join the Elyst AI Circle →
 					</button> */}
