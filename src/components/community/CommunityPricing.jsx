@@ -138,7 +138,7 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
               <li
                 key={text}
                 className="font-body font-bold"
-                style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: highlighted ? '#ffffff' : '#0d1a10', fontSize: '1rem' }}
+                style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: highlighted ? '#ffffff' : '#0d1a10', fontSize: '1rem', textAlign: 'left' }}
               >
                 <span style={{ color: highlighted ? 'rgba(255,255,255,0.7)' : '#2ec866', fontWeight: 700, flexShrink: 0, fontSize: '0.85rem', marginTop: 3 }}>✓</span>
                 {text}

@@ -201,7 +201,7 @@ function HoverCard({ tag, badge, title, description, cta, onCtaClick, imageSrc, 
         </p>
       </div>
 
-      {/* Single button — always at the same position */}
+      {/* Single button - always at the same position */}
       <div
         style={{
           position: "absolute",

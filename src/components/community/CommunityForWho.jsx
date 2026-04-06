@@ -10,7 +10,7 @@ const anim = (delay = 0) => ({
 const cards = [
   {
     label: 'Professionals',
-    desc: 'You\'re good at what you do — but AI is moving faster than most people admit.',
+    desc: 'You\'re good at what you do - but AI is moving faster than most people admit.',
     checks: [
       'You\'ve tried tools, but nothing has really stuck',
       'You want to know what\'s actually worth your time',
@@ -20,7 +20,7 @@ const cards = [
   },
   {
     label: 'Founders',
-    desc: 'You\'re building something — and you know AI will change how it works.',
+    desc: 'You\'re building something - and you know AI will change how it works.',
     checks: [
       'You don\'t want more tools, you want clarity on where to start',
       'Every week you delay, someone else moves ahead',
@@ -104,7 +104,7 @@ const CommunityForWho = () => (
       {/* Closing line */}
       <motion.div {...anim(0.35)} style={{ marginTop: 40 }}>
         <div style={{ borderLeft: '3px solid #2ec866', paddingLeft: 20 }}>
-          <p className="font-body" style={{ color: '#2a5a3a', fontSize: '1.08rem', margin: 0, lineHeight: 1.65, fontWeight: 500 }}>
+          <p className="font-body" style={{ color: '#2a5a3a', fontSize: '1.08rem', margin: 0, lineHeight: 1.65, fontWeight: 500, textAlign: 'left' }}>
             If either of those sounds like you,{' '}
             <strong style={{ color: '#0a2e1a', fontWeight: 700 }}>the application takes two minutes.</strong>
           </p>

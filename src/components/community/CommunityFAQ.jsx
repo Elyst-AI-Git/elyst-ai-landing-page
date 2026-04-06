@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: 'Can I cancel anytime?',
-    a: 'Yes. There is no lock-in. If you decide the Circle is not for you, you can leave. The only thing you cannot take back is your founding rate — if you leave and want to rejoin later, you come back at whatever the current price is.',
+    a: 'Yes. There is no lock-in. If you decide the Circle is not for you, you can leave. The only thing you cannot take back is your founding rate - if you leave and want to rejoin later, you come back at whatever the current price is.',
   },
   {
     q: 'What makes this different from following Elyst AI on social media?',
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: 'I am not very technical. Will I be lost?',
-    a: 'The Circle is not built for people who already have it figured out — it is built for people who are in the process of figuring it out. You do not need a technical background. You need the intention to actually apply what you learn.',
+    a: 'The Circle is not built for people who already have it figured out - it is built for people who are in the process of figuring it out. You do not need a technical background. You need the intention to actually apply what you learn.',
   },
 ]
 
@@ -109,7 +109,7 @@ const CommunityFAQ = () => {
                     >
                       <div
                         className="font-body text-sm leading-relaxed"
-                        style={{ padding: '0 24px 20px', color: '#4a6a55', lineHeight: 1.75 }}
+                        style={{ padding: '0 24px 20px', color: '#4a6a55', lineHeight: 1.75, textAlign: 'left' }}
                       >
                         {a}
                       </div>
