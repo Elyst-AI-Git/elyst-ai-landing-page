@@ -11,7 +11,7 @@ import CommunityFAQ from '../components/community/CommunityFAQ'
 import CommunityFinalCTA from '../components/community/CommunityFinalCTA'
 import Footer from '../components/Footer'
 
-const CIRCLE_TITLE = 'Elyst AI Circle - Limited Founding Spots Open'
+const CIRCLE_TITLE = 'Elyst AI Circle - Join the AI Circle'
 const CIRCLE_DESC = 'A closed community for professionals applying AI to their real work. Weekly signals, monthly catchups. 25 founding spots only.'
 const CIRCLE_URL = 'https://elystai.com/circle'
 const CIRCLE_OG_IMAGE = 'https://elystai.com/og-image.png'
