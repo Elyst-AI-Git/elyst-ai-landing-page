@@ -60,31 +60,6 @@ const CommunityHero = () => {
 
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 900, width: '100%', textAlign: 'center' }}>
 
-          {/* Badge */}
-          <motion.div {...anim(0)} style={{ display: 'flex', justifyContent: 'center', marginBottom: 36 }}>
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 10,
-              background: 'rgba(46,200,102,0.1)',
-              border: '1px solid rgba(46,200,102,0.3)',
-              borderRadius: 999,
-              padding: '9px 20px',
-              color: '#2ec866',
-              fontSize: '0.75rem',
-              fontWeight: 700,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-            }}>
-              <span style={{
-                width: 6, height: 6, background: '#2ec866', borderRadius: '50%',
-                animation: 'heroPulse 2s infinite',
-                display: 'inline-block', flexShrink: 0,
-              }} />
-              Now Accepting Founding Members &nbsp;·&nbsp; 25 Spots Only
-            </div>
-          </motion.div>
-
           {/* Headline - 3-tier visual hierarchy */}
           <div style={{ marginBottom: 32 }}>
             <motion.div
@@ -150,7 +125,7 @@ const CommunityHero = () => {
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}
           >
             <a
-              href="https://forms.gle/fSmbvXiRoAqLK3ky7"
+              href="https://nas.io/elystaicircle"
               target="_blank"
               rel="noopener noreferrer"
               className="font-body font-bold"
@@ -166,7 +141,7 @@ const CommunityHero = () => {
               onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.88' }}
               onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
             >
-              Apply for a Founding Spot →
+              Join the Circle →
             </a>
             <a
               href="#what-you-join"
