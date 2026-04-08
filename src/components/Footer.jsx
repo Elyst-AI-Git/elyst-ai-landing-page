@@ -1,10 +1,10 @@
 import { Linkedin, Instagram, Facebook } from "lucide-react";
 
-const navLinks = ["About", "Courses", "Blog", "Community"];
+const navLinks = ["About", "Events", /* "Blog", */ "Elyst AI Circle"];
 
 const Footer = () => {
 	return (
-		<footer className="relative overflow-hidden bg-surface-dark">
+		<footer id="footer" className="relative overflow-hidden bg-surface-dark">
 			<div className="px-(--section-px) pt-14 pb-10">
 				<div className="max-w-300 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
 					{/* Left - Nav Links */}
@@ -14,16 +14,16 @@ const Footer = () => {
 								key={link}
 								href={`#${link.toLowerCase()}`}
 								onClick={() => {
-									if (link == "Courses") {
-										window.open("https://elystai.course.link", "_blank");
+									if (link === "Events") {
+										document.getElementById("events")?.scrollIntoView({ behavior: "smooth" });
 										return;
 									}
-									if (link === "Blog") {
-										window.open("https://elystai-newsletter.beehiiv.com/", "_blank");
-										return;
-									}
-                                    if (link === "Community") {
-										window.open("https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO", "_blank");
+									// if (link === "Blog") {
+									// 	window.open("https://elystai-newsletter.beehiiv.com/", "_blank");
+									// 	return;
+									// }
+                                    if (link === "Elyst AI Circle") {
+										window.location.href = "/circle";
 										return;
 									}
                                     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
@@ -43,6 +43,12 @@ const Footer = () => {
 							className="font-body text-sm text-text-muted-dark hover:text-accent transition-colors block mb-1"
 						>
 							mailofelystai@gmail.com
+						</a>
+						<a
+							href="tel:+918137043653"
+							className="font-body text-sm text-text-muted-dark hover:text-accent transition-colors block mb-1"
+						>
+							+91-8137043653
 						</a>
 						<p className="font-body text-sm text-text-muted-dark mb-4">Kerala, India</p>
 						<div className="flex gap-2 md:justify-end">

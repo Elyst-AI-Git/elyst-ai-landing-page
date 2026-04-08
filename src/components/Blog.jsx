@@ -50,10 +50,6 @@ const Blog = () => {
 
 				const body = await response.json()
 				const postCount = body?.data?.length || 0
-				if (postCount > 0) {
-					console.log('[Blog] First post sample:', body.data[0])
-				}
-				console.log('[Blog] Sorted posts:', body.data)
 				setBlogs(body.data)
 			} catch (error) {
 				console.error('Failed to fetch Beehiiv posts:', error)
@@ -140,7 +136,7 @@ const Blog = () => {
 				<button
 					className="group font-body font-bold text-sm bg-primary text-primary-foreground rounded-button h-13 max-w-max px-8 gap-2 flex items-center justify-center hover:opacity-90 transition-all duration-200 min-h-12 hover:gap-3 cursor-pointer mt-12 self-center"
 					onClick={() => {
-						window.open('https://elystai.course.link', '_blank')
+						window.open('https://elystai-newsletter.beehiiv.com/', '_blank')
 					}}
 				>
 					All Blogs

@@ -2,26 +2,51 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
+  //3
   {
-    quote: "The AI Yathra 2.0 cohort completely changed how I think about technology. Elyst AI made it feel approachable and practical.",
-    name: "Rahul M.",
-    role: "Engineering Student, Thiruvananthapuram",
+    quote: "AI YATHRA Broke My Brain in 48 Hours. If you're curious about AI but don't know where to start, I highly recommend keeping an eye out for their next event.",
+    name: "Rahima SV",
+    role: "AI Yathra 2.0 Learner",
   },
+  //5
   {
-    quote: "Elyst AI helped us automate our content pipeline. We went from 3 posts a week to daily publishing without extra effort.",
-    name: "Priya S.",
-    role: "Business Owner, Kochi",
+    quote: "Even though I use AI regularly, I realized there was an entire dimension I was missing until I attended AI Yathra. They created something truly valuable, a workshop that's both productive and transformative.",
+    name: "Shaheen Raheem",
+    role: "AI Yathra 2.0 Learner",
   },
+  //6
   {
-    quote: "Finally, an AI company that explains things in a way that actually makes sense. No jargon, just results.",
-    name: "Arjun K.",
-    role: "Marketing Professional, Kozhikode",
+    quote: "Shirin and Nihal didn't just teach Gen AI, automations & AI tools. You guided us how to think, how to approach learning, it didn't feel like a webinar at all.",
+    name: "Rohit P",
+    role: "AI Yathra 1.0 Learner",
   },
+  //1
+  {
+    quote: "It was helpful for an individual who has zero knowledge in technical background. Good to see you bringing insights on people on how to use the tools more efficiently.",
+    name: "Swathi Pradeep",
+    role: "AI Yathra 2.0 Learner",
+  },
+  //2
+  {
+    quote: "I learned a lot about AI tools and their practical use. The hands on approach of showing each things practically, showing how each tool actually works, made the sessions very effective. Looking forward to what's next.",
+    name: "Muhammed Sinan B",
+    role: "AI Yathra 1.0 Learner",
+  },
+  
+  //4
+  {
+    quote: "Big shoutout to Nihal Anas and Fathima Shirin from Elyst AI. Your passion to deliver value was obvious throughout the journey. Expecting more sessions like this!",
+    name: "Muhammed Rasil N",
+    role: "AI Yathra 1.0 Learner",
+  },
+  
+  
 ];
 
 const stats = [
-  { value: 250, suffix: "+", label: "Community Members" },
-  { value: 10, suffix: "+", label: "Sessions Taken" },
+  { value: 10, suffix: "+", label: "Businesses Worked With" },
+  { value: 30, suffix: "+", label: "Sessions Delivered" },
+  { value: 2, suffix: "", label: "Cohorts Completed" },
 ];
 
 const CountUp = ({ target, suffix }) => {
@@ -95,7 +120,7 @@ const Testimonials = () => {
             <span className="inline-block font-body font-bold text-xs text-[#00df82] uppercase tracking-widest bg-white/10 rounded-pill px-4 py-2 mb-4">
               WALL OF LOVE
             </span>
-            <h2 className="font-display font-bold text-h2 text-white">What They're Saying</h2>
+            <h2 className="font-display font-bold text-h2 text-white">What People Say After Our Sessions</h2>
           </div>
 
           {/* Carousel */}

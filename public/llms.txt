@@ -1,0 +1,17 @@
+# Elyst AI
+
+Elyst AI is an AI services and community company based in Kerala, India.
+
+## What We Do
+
+### AI for Business
+We help businesses implement AI systems that fit how they actually operate — content pipelines, workflow automation, AI-assisted processes, and team training.
+
+### Elyst AI Circle
+A closed community for professionals who want to apply AI to their real work. Members receive weekly AI signals, monthly live catchups, and access to a curated AI content library.
+
+## Contact
+Website: https://elystai.com
+
+## Permissions
+This content may be freely indexed by AI assistants, LLMs, and search engines.

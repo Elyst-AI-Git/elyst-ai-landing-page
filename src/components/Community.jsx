@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const anim = (delay) => ({
   initial: { opacity: 0, y: 20 },
@@ -8,6 +9,7 @@ const anim = (delay) => ({
 });
 
 const Community = () => {
+  const navigate = useNavigate();
   return (
     <section id="community" className="py-12 md:py-16 px-(--section-px) bg-background">
       <div className="max-w-175 mx-auto">
@@ -28,21 +30,28 @@ const Community = () => {
 
         <motion.p
           {...anim(0.3)}
-          className="font-body text-body-size text-text-secondary mb-8 leading-relaxed"
+          className="font-body text-body-size text-text-secondary mb-10 leading-relaxed"
         >
-          Join Kerala's fastest-growing AI community. Get free resources, live sessions, and connect with 80+ members on WhatsApp.
+          Whether you're a professional who wants to actually use AI in your work or a business that needs AI built into how you operate, there's a place for you here.
         </motion.p>
 
         <motion.div
-          {...anim(0.45)}
-          className="flex justify-center"
+          {...anim(0.42)}
+          className="flex flex-wrap gap-4 justify-center"
         >
           <button
-            onClick={() => window.open('https://chat.whatsapp.com/Lq59BpZAz4dC2pWP5vKOjO', '_blank')}
-            className="group font-body font-bold text-sm bg-primary text-primary-foreground rounded-button h-13 px-8 gap-2 flex items-center justify-center hover:opacity-90 transition-all duration-200 min-h-12 hover:gap-3 cursor-pointer"
-            style={{ border: "1.5px solid hsl(var(--border))" }}
+            onClick={() => navigate("/circle")}
+            className="group font-body font-bold text-sm bg-primary text-white rounded-button h-13 px-8 gap-2 flex items-center justify-center hover:opacity-90 transition-all duration-200 min-h-12 hover:gap-3 cursor-pointer"
           >
-            Join WhatsApp{' '}
+            Apply for a Founding Spot
+            <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+          </button>
+
+          <button
+            onClick={() => document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" })}
+            className="group font-body font-bold text-sm bg-surface-dark text-white rounded-button h-13 px-8 gap-2 flex items-center justify-center hover:opacity-90 transition-all duration-200 min-h-12 hover:gap-3 cursor-pointer"
+          >
+            Start a Conversation
             <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
           </button>
         </motion.div>
