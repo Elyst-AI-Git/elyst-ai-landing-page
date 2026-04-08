@@ -39,7 +39,7 @@ const CommunityPage = () => {
       <CommunityNav />
       <CommunityHero />
       <CommunityAbout />
-      <CommunityBenefits />
+      {/* <CommunityBenefits /> */}
       <CommunityForWho />
       <CommunityPricing />
       <CommunityJoin />

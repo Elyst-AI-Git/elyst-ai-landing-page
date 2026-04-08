@@ -28,24 +28,25 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
   return (
     <div style={{
       background: highlighted
-        ? 'linear-gradient(145deg, #0d3d25, #1a5c35)'
+        ? 'linear-gradient(145deg, #2a2a2a, #3a3a3a)'
         : '#ffffff',
-      border: `1.5px solid ${highlighted ? '#2ec866' : '#e4f2e9'}`,
+      border: `1.5px solid ${highlighted ? '#555555' : '#e4f2e9'}`,
       borderRadius: 24,
       padding: 36,
       position: 'relative',
       overflow: 'hidden',
-      boxShadow: highlighted ? '0 0 60px rgba(46,200,102,0.18), 0 20px 60px rgba(13,61,37,0.15)' : '0 2px 12px rgba(0,0,0,0.04)',
+      boxShadow: highlighted ? '0 2px 12px rgba(0,0,0,0.12)' : '0 2px 12px rgba(0,0,0,0.04)',
       height: '100%',
       display: 'flex',
       flexDirection: 'column',
+      opacity: highlighted ? 0.75 : 1,
     }}>
 
       {highlighted && (
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(ellipse at 70% 0%, rgba(46,200,102,0.12) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at 70% 0%, rgba(100,100,100,0.12) 0%, transparent 60%)',
           pointerEvents: 'none',
         }} />
       )}
@@ -59,8 +60,8 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
           width: 160,
           textAlign: 'center',
           transform: 'rotate(45deg)',
-          background: '#2ec866',
-          color: '#060d09',
+          background: '#888888',
+          color: '#ffffff',
           fontFamily: 'var(--font-body)',
           fontSize: '0.62rem',
           fontWeight: 800,
@@ -80,7 +81,7 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
           fontSize: '0.72rem',
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
-          color: highlighted ? 'rgba(255,255,255,0.5)' : '#1a7a4a',
+          color: highlighted ? 'rgba(255,255,255,0.45)' : '#1a7a4a',
           marginBottom: 10,
         }}
       >
@@ -96,7 +97,7 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
 
       {highlighted ? (
         <div style={{ marginBottom: 24 }}>
-          <div className="font-body text-sm" style={{ color: '#2ec866', fontWeight: 700, marginBottom: 3 }}>
+          <div className="font-body text-sm" style={{ color: '#aaaaaa', fontWeight: 700, marginBottom: 3 }}>
             gives you access until July 15
           </div>
           <div className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
@@ -121,7 +122,7 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
             className="font-body"
             style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: highlighted ? 'rgba(255,255,255,0.8)' : '#1a3a28', fontSize: '1rem' }}
           >
-            <span style={{ color: highlighted ? 'rgba(255,255,255,0.7)' : '#2ec866', fontWeight: 700, flexShrink: 0, fontSize: '0.85rem', marginTop: 3 }}>✓</span>
+            <span style={{ color: highlighted ? 'rgba(255,255,255,0.5)' : '#2ec866', fontWeight: 700, flexShrink: 0, fontSize: '0.85rem', marginTop: 3 }}>✓</span>
             {text}
           </li>
         ))}
@@ -130,7 +131,7 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
       {extras && (
         <div style={{ marginTop: 20 }}>
           <div style={{ height: '1px', background: highlighted ? 'rgba(255,255,255,0.08)' : '#e4f2e9', marginBottom: 14 }} />
-          <div className="font-body font-bold" style={{ fontSize: '0.75rem', color: '#2ec866', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 10 }}>
+          <div className="font-body font-bold" style={{ fontSize: '0.75rem', color: '#888888', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 10 }}>
             {extraLabel}
           </div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -140,7 +141,7 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
                 className="font-body font-bold"
                 style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: highlighted ? '#ffffff' : '#0d1a10', fontSize: '1rem', textAlign: 'left' }}
               >
-                <span style={{ color: highlighted ? 'rgba(255,255,255,0.7)' : '#2ec866', fontWeight: 700, flexShrink: 0, fontSize: '0.85rem', marginTop: 3 }}>✓</span>
+                <span style={{ color: highlighted ? 'rgba(255,255,255,0.5)' : '#2ec866', fontWeight: 700, flexShrink: 0, fontSize: '0.85rem', marginTop: 3 }}>✓</span>
                 {text}
               </li>
             ))}
@@ -148,34 +149,52 @@ function PriceCard({ name, ribbon, price, sub, features, extraLabel, extras, cta
         </div>
       )}
 
-      <a
-        href={highlighted ? 'https://forms.gle/fSmbvXiRoAqLK3ky7' : undefined}
-        target={highlighted ? '_blank' : undefined}
-        rel={highlighted ? 'noopener noreferrer' : undefined}
-        onClick={!highlighted ? (e) => e.preventDefault() : undefined}
-        onMouseEnter={() => setBtnHover(true)}
-        onMouseLeave={() => setBtnHover(false)}
-        style={{
-          display: 'block',
-          textAlign: 'center',
-          marginTop: 28,
-          padding: '14px',
-          borderRadius: 999,
-          background: highlighted
-            ? (btnHover ? '#3ad077' : '#2ec866')
-            : (btnHover ? '#e4f2e9' : '#f0faf4'),
-          border: highlighted ? 'none' : '1.5px solid #c8e6d4',
-          color: highlighted ? '#060d09' : '#0d3d25',
-          fontFamily: 'var(--font-body)',
-          fontWeight: 700,
-          fontSize: '0.95rem',
-          textDecoration: 'none',
-          transition: 'all 0.2s',
-          cursor: highlighted ? 'pointer' : 'default',
-        }}
-      >
-        {cta}
-      </a>
+      {highlighted ? (
+        <div
+          style={{
+            display: 'block',
+            textAlign: 'center',
+            marginTop: 28,
+            padding: '14px',
+            borderRadius: 999,
+            background: '#555555',
+            border: 'none',
+            color: 'rgba(255,255,255,0.45)',
+            fontFamily: 'var(--font-body)',
+            fontWeight: 700,
+            fontSize: '0.95rem',
+            cursor: 'not-allowed',
+          }}
+        >
+          {cta}
+        </div>
+      ) : (
+        <a
+          href="https://nas.io/elystaicircle"
+          target="_blank"
+          rel="noopener noreferrer"
+          onMouseEnter={() => setBtnHover(true)}
+          onMouseLeave={() => setBtnHover(false)}
+          style={{
+            display: 'block',
+            textAlign: 'center',
+            marginTop: 28,
+            padding: '14px',
+            borderRadius: 999,
+            background: btnHover ? '#e4f2e9' : '#f0faf4',
+            border: '1.5px solid #c8e6d4',
+            color: '#0d3d25',
+            fontFamily: 'var(--font-body)',
+            fontWeight: 700,
+            fontSize: '0.95rem',
+            textDecoration: 'none',
+            transition: 'all 0.2s',
+            cursor: 'pointer',
+          }}
+        >
+          {cta}
+        </a>
+      )}
     </div>
   )
 }
@@ -218,7 +237,7 @@ const CommunityPricing = () => (
             features={standardFeatures}
             extraLabel="Plus, exclusively:"
             extras={earlyBirdExtras}
-            cta="Claim Early Bird Spot →"
+            cta="Early Bird Closed"
             highlighted
           />
         </motion.div>

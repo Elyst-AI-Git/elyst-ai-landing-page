@@ -13,7 +13,7 @@ const CommunityNav = () => {
 	const navigate = useNavigate()
 	const [mobileOpen, setMobileOpen] = useState(false)
 
-	const APPLY_URL = 'https://forms.gle/fSmbvXiRoAqLK3ky7'
+	const APPLY_URL = 'https://nas.io/elystaicircle'
 
 	const scrollTo = (id) => {
 		setMobileOpen(false)
