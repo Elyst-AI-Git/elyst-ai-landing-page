@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import CommunityPage from './pages/CommunityPage.jsx'
+import StudentPage from './pages/events/StudentPage.jsx'
 
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/circle" element={<CommunityPage />} />
+        <Route path="/events/ai-for-juniors" element={<StudentPage />} />
       </Routes>
     </BrowserRouter>
   )
