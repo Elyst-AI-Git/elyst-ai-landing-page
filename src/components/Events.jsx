@@ -1,8 +1,27 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import aiYathra1 from '../assets/AI Yathra.png'
 import aiYathra2 from '../assets/AI yathra 2.0.png'
+import ai_for_juniors from '../assets/ai-for-juniors-poster.png'
 
 const events = [
+  {
+    tag: 'Ongoing',
+    tagStyle: 'bg-yellow-100 text-yellow-700',
+    title: 'AI for Juniors',
+    description: 'In 5 days, your child goes from using AI to building with it.',
+    image: ai_for_juniors,
+    imagePosition: 'center'
+  },
+  {
+    tag: 'Completed',
+    tagStyle: 'bg-emerald-100 text-emerald-700',
+    title: 'AI Yathra 2.0',
+    description:
+    'The second cohort, bigger and more structured. AI Yathra 2.0 was ran upon popular demand and the success of the first edition.',
+    image: aiYathra2,
+    imagePosition: 'bottom',
+  },
   {
     tag: 'Completed',
     tagStyle: 'bg-emerald-100 text-emerald-700',
@@ -11,24 +30,10 @@ const events = [
       'Our first public GenAI cohort, a 3-day virtual program that brought together professionals and early adopters to build with AI from scratch.',
     image: aiYathra1,
   },
-  {
-    tag: 'Completed',
-    tagStyle: 'bg-emerald-100 text-emerald-700',
-    title: 'AI Yathra 2.0',
-    description:
-      'The second cohort, bigger and more structured. AI Yathra 2.0 was ran upon popular demand and the success of the first edition.',
-    image: aiYathra2,
-    imagePosition: 'bottom',
-  },
-  {
-    tag: 'Coming Soon',
-    tagStyle: 'bg-yellow-100 text-yellow-700',
-    title: 'Launching Soon',
-    description: 'Coming to you soon.',
-  },
 ]
 
 const Events = () => {
+  const navigate = useNavigate()
   return (
     <section
       id="events"
@@ -45,7 +50,7 @@ const Events = () => {
             className="font-display font-bold text-white mb-4"
             style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
           >
-            What We Have Run & What's Next
+            What We Have Run & What's Going On
           </h2>
         </div>
 
@@ -58,7 +63,11 @@ const Events = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
-              className="rounded-card overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-250 relative flex flex-col min-h-72"
+              onClick={event.title === 'AI for Juniors' ? () => {
+                navigate('/events/ai-for-juniors')
+                window.scrollTo(0, 0)
+              } : undefined}
+            className={`rounded-card overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-250 relative flex flex-col min-h-72${event.title === 'AI for Juniors' ? ' cursor-pointer' : ''}`}
               style={event.image ? {
                 backgroundImage: `url(${event.image})`,
                 backgroundSize: 'cover',
