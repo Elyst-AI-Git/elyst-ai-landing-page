@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import TestimonialDeck from '../../components/events/TestimonialDeck'
 import mentor from '../../assets/mentor.jpeg'
 import websiteBuilding from '../../assets/website-building.png'
-import CURRICULUM from '../../../public/AI-for-juniors-curriculum.pdf'
+const CURRICULUM = '/AI-for-juniors-curriculum.pdf'
 
 const StudentPage = () => {
   const [activeSection, setActiveSection] = useState('about')
