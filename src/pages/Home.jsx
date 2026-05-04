@@ -9,7 +9,7 @@ import Community from '../components/Community.jsx'
 import Events from '../components/Events.jsx'
 import BottomCTA from '../components/BottomCTA.jsx'
 
-const HOME_TITLE = 'Elyst AI - AI for Business & Community'
+const HOME_TITLE = 'Elyst AI – AI Implementation for Businesses'
 const HOME_DESC = 'We help businesses implement AI that works, and run a closed community for professionals applying it to their real work. Based in India.'
 const HOME_URL = 'https://elystai.com/'
 const HOME_OG_IMAGE = 'https://elystai.com/og-image.png'

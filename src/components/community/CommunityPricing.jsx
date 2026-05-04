@@ -231,7 +231,7 @@ const CommunityPricing = () => (
         <motion.div {...anim(0.2)} style={{ height: '100%' }}>
           <PriceCard
             name="Early Bird"
-            ribbon="Limited Spots"
+            ribbon="SOLD OUT"
             price="₹199"
             sub="per month · rate locked forever"
             features={standardFeatures}

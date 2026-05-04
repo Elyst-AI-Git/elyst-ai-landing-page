@@ -43,7 +43,7 @@ const Community = () => {
             onClick={() => navigate("/circle")}
             className="group font-body font-bold text-sm bg-primary text-white rounded-button h-13 px-8 gap-2 flex items-center justify-center hover:opacity-90 transition-all duration-200 min-h-12 hover:gap-3 cursor-pointer"
           >
-            Apply for a Founding Spot
+            Join the Circle
             <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
           </button>
 
