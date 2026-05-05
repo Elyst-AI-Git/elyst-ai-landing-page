@@ -477,7 +477,7 @@ const StudentPage = () => {
               </p>
 
               <div className="flex items-baseline justify-center gap-4 mb-4">
-                <span className="font-display text-7xl font-bold text-[#00DF82]">₹899</span>
+                <span className="font-display text-7xl font-bold text-[#00DF82]">₹999</span>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
