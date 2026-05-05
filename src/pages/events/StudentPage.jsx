@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import TestimonialDeck from '../../components/events/TestimonialDeck'
+import StudentFeedback from '../../components/events/StudentFeedback'
 import mentor from '../../assets/mentor.jpeg'
 import websiteBuilding from '../../assets/website-building.png'
 const CURRICULUM = '/AI-for-juniors-curriculum.pdf'
@@ -148,7 +149,7 @@ const StudentPage = () => {
                 </div>
                 <div className="p-8 rounded-lg shadow-sm translate-y-6 transform rotate-2 hover:rotate-0 transition-all cursor-default"
                   style={{ background: '#30ef90' }}>
-                  <h3 className="font-display text-4xl font-bold text-[#003d20]">1 Hour</h3>
+                  <h3 className="font-display text-4xl font-bold text-[#003d20]">90 Mins</h3>
                   <p className="font-body text-[#003d20]/80 font-medium">Per Day</p>
                 </div>
                 <div className="p-8 rounded-lg shadow-sm -translate-y-2 transform -rotate-1 hover:rotate-0 transition-all cursor-default"
@@ -176,7 +177,7 @@ const StudentPage = () => {
                   <span className="material-symbols-outlined text-[#00532d]">school</span>
                 </div>
                 <div>
-                  <p className="font-display font-bold text-[#00362e] text-left">No Coding. No Jargon. Just Real Skills</p>
+                  <p className="font-display font-bold text-[#00362e] text-left">No technical knowledge needed, we will start from scratch</p>
                   <p className="font-body text-sm text-[#2c655b] text-left">Grades 5-10</p>
                 </div>
               </div>
@@ -267,9 +268,14 @@ const StudentPage = () => {
       </section>
 
       {/* ══════════════════════════════════════
-          SECTION 4: TESTIMONIALS (deck of cards)
+          SECTION 4: WHAT PARENTS SAY (deck of cards)
       ══════════════════════════════════════ */}
       <div id="testimonials"><TestimonialDeck /></div>
+
+      {/* ══════════════════════════════════════
+          SECTION 4b: WHAT STUDENTS SAY (videos + audio)
+      ══════════════════════════════════════ */}
+      <StudentFeedback />
 
       {/* ══════════════════════════════════════
           SECTION 5: FEATURES  (code3.html style)
@@ -294,7 +300,7 @@ const StudentPage = () => {
                 <span className="font-body text-xs font-bold uppercase tracking-wider text-[#2c655b]">Student Feedback</span>
               </div>
               <p className="font-display font-bold text-lg leading-tight text-[#00362e] text-left">"I made my own website using AI!"</p>
-              <p className="font-body text-sm text-[#2c655b] mt-2 text-left">Rahil Farzad <br /> Grade 6 <br /> Alhuda english school</p>
+              <p className="font-body text-sm text-[#2c655b] mt-2 text-left">Rahil Farzad <br /> Grade 6</p>
             </div>
           </div>
 

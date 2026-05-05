@@ -217,7 +217,7 @@ export default function TestimonialDeck() {
             borderRadius: '999px',
             marginBottom: '20px',
           }}>
-            What Students Say
+            What Parents Say
           </span>
           <h2 style={{
             fontFamily: "'Space Grotesk', sans-serif",
@@ -228,7 +228,7 @@ export default function TestimonialDeck() {
             letterSpacing: '-0.05em',
             margin: 0,
           }}>
-            Real results, real students.
+            Real results the parents saw.
           </h2>
           <p style={{
             fontFamily: "'DM Sans', sans-serif",
@@ -306,7 +306,6 @@ export default function TestimonialDeck() {
           ))}
         </div>
 
-        <p className="tdeck-hint">Click the Testimonial to see the next</p>
       </div>
     </section>
   )
