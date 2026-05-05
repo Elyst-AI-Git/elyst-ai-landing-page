@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 const navLinks = ['Home', 'About', 'Events', /* 'Blog' */]
 
-const Navbar = () => {
+const Navbar = ({ ctaText, ctaAction }) => {
 	const navigate = useNavigate();
+	const navCTAText = ctaText || 'Join the Elyst AI Circle →'
+	const navCTAAction = ctaAction || (() => navigate('/circle'))
 	const [mobileOpen, setMobileOpen] = useState(false)
 
 	const scrollTo = (id) => {
@@ -69,10 +71,10 @@ const Navbar = () => {
 
 				<div className="flex items-center justify-end">
 					<button
-						onClick={() => navigate('/circle')}
+						onClick={navCTAAction}
 						className="hidden md:flex items-center justify-center font-body font-bold text-[0.95rem] bg-white text-primary rounded-button px-7 min-h-12 hover:opacity-90 transition-opacity cursor-pointer"
 					>
-						Join the Elyst AI Circle →
+						{navCTAText}
 					</button>
 
 					{/* Mobile hamburger */}
@@ -117,10 +119,10 @@ const Navbar = () => {
 								</button>
 							))}
 							<button
-								onClick={() => { setMobileOpen(false); navigate('/circle') }}
+								onClick={() => { setMobileOpen(false); navCTAAction() }}
 								className="font-body font-bold text-sm bg-white text-primary rounded-button px-6 min-h-12 mt-2 hover:opacity-90 transition-opacity cursor-pointer"
 							>
-								Join →
+								{ctaText ? ctaText : 'Join →'}
 							</button>
 						</div>
 					</motion.div>

@@ -156,14 +156,37 @@ function VideoDeck({ videos }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      {/* Deck wrapper — extra bottom space for back-card peek */}
+      {/* Deck + arrows row */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 40 }}>
+
+        {/* Left arrow */}
+        <button
+          onClick={advance}
+          aria-label="Previous video"
+          style={{
+            width: 44, height: 44, borderRadius: '50%',
+            background: '#fff',
+            border: '1.5px solid rgba(0,72,55,0.15)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            cursor: 'pointer', flexShrink: 0,
+            boxShadow: '0 2px 12px rgba(0,72,55,0.1)',
+            transition: 'background 0.2s, box-shadow 0.2s',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = '#004837' }}
+          onMouseLeave={e => { e.currentTarget.style.background = '#fff' }}
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8l5 5" stroke="#004837" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
+      {/* Deck wrapper */}
       <div
         onClick={advance}
         style={{
           position: 'relative',
-          width: 'min(260px, 78vw)',
+          width: 'min(260px, 68vw)',
           aspectRatio: '9 / 16',
-          marginBottom: 40,
           cursor: 'pointer',
         }}
       >
@@ -296,6 +319,31 @@ function VideoDeck({ videos }) {
         })}
       </div>
 
+      </div>{/* end deck wrapper */}
+
+        {/* Right arrow */}
+        <button
+          onClick={advance}
+          aria-label="Next video"
+          style={{
+            width: 44, height: 44, borderRadius: '50%',
+            background: '#004837',
+            border: '1.5px solid #004837',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            cursor: 'pointer', flexShrink: 0,
+            boxShadow: '0 2px 12px rgba(0,72,55,0.22)',
+            transition: 'opacity 0.2s',
+          }}
+          onMouseEnter={e => e.currentTarget.style.opacity = '0.8'}
+          onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M6 3l5 5-5 5" stroke="#00DF82" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+
+      </div>{/* end arrows row */}
+
       {/* Dots */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
         {videos.map((_, i) => (
@@ -316,8 +364,8 @@ export default function StudentFeedback() {
   const videos = [
     {
       src: '/student-video-1.mp4',
-      name: 'Student Name',
-      grade: 'Grade 6',
+      name: 'Fathima Akleema',
+      grade: 'Grade 5',
     },
     {
       src: null,
@@ -331,7 +379,7 @@ export default function StudentFeedback() {
   const audios = [
     {
       src: '/student-audio-1.ogg',
-      name: 'Student Name',
+      name: 'Farha',
       teaser: 'Listen to their experience',
       rotation: -2,
     },

@@ -45,10 +45,10 @@ const Footer = () => {
 							mailofelystai@gmail.com
 						</a>
 						<a
-							href="tel:+918137043653"
+							href="tel:+919633288931"
 							className="font-body text-sm text-text-muted-dark hover:text-accent transition-colors block mb-1"
 						>
-							+91-8137043653
+							+91-9633288931
 						</a>
 						<p className="font-body text-sm text-text-muted-dark mb-4">Kerala, India</p>
 						<div className="flex gap-2 md:justify-end">

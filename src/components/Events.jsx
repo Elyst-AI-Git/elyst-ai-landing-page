@@ -67,16 +67,36 @@ const Events = () => {
                 navigate('/events/ai-for-juniors')
                 window.scrollTo(0, 0)
               } : undefined}
-            className={`rounded-card overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-250 relative flex flex-col min-h-72${event.title === 'AI for Juniors' ? ' cursor-pointer' : ''}`}
-              style={event.image ? {
-                backgroundImage: `url(${event.image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: event.imagePosition || 'center',
-              } : {}}
+            className={`rounded-card overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-250 relative flex flex-col${event.title === 'AI for Juniors' ? ' cursor-pointer' : ''}`}
+              style={{ ...(event.image ? { backgroundImage: `url(${event.image})`, backgroundSize: 'cover', backgroundPosition: event.imagePosition || 'center' } : {}), aspectRatio: '1/1' }}
             >
               {/* Dark gradient overlay for readability */}
               {event.image && (
                 <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/80 to-black/60 rounded-card" />
+              )}
+
+              {/* "MAY BATCH OPEN NOW" ribbon for AI for Juniors */}
+              {event.title === 'AI for Juniors' && (
+                <div style={{
+                  position: 'absolute',
+                  top: 26,
+                  right: -36,
+                  width: 160,
+                  textAlign: 'center',
+                  transform: 'rotate(45deg)',
+                  background: '#00DF82',
+                  color: '#004837',
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.58rem',
+                  fontWeight: 800,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  padding: '7px 0',
+                  zIndex: 20,
+                  boxShadow: '0 2px 10px rgba(0,0,0,0.25)',
+                }}>
+                  May Batch Open Now
+                </div>
               )}
               <div
                 className="relative z-10 p-8 flex flex-col h-full gap-4"
