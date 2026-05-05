@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import TestimonialDeck from '../../components/events/TestimonialDeck'
@@ -105,7 +106,17 @@ function FAQCard({ q, a, rotation }) {
 }
 
 /* ─── Page ───────────────────────────────────────────────────── */
+const ENROLL_URL = 'https://forms.gle/PWZteGnuDJYDm84Y7'
+
 const StudentPage = () => {
+  const navigate = useNavigate()
+  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  const navCustomLinks = [
+    { label: 'Home', action: () => navigate('/') },
+    { label: 'About', action: () => scrollTo('about') },
+    { label: 'Curriculum', action: () => scrollTo('curriculum') },
+    { label: 'Testimonials', action: () => scrollTo('testimonials') },
+  ]
   return (
     <div className="student-page text-[#1a1a1a]">
 
@@ -120,7 +131,8 @@ const StudentPage = () => {
       {/* ── Main Navbar ── */}
       <Navbar
         ctaText="Enroll Now"
-        ctaAction={() => window.open('https://forms.gle/V6a1TWy1qj7WzRTi9', '_blank', 'noopener,noreferrer')}
+        ctaAction={() => window.open(ENROLL_URL, '_blank', 'noopener,noreferrer')}
+        customLinks={navCustomLinks}
       />
 
       {/* ══════════════════════════════════════
@@ -151,16 +163,14 @@ const StudentPage = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#30ef90] text-[#00532d] font-bold px-10 py-5 rounded-full text-lg shadow-xl shadow-[#30ef90]/20 active:scale-95 transition-all font-body hover:cursor-pointer" onClick={() => window.open('https://forms.gle/V6a1TWy1qj7WzRTi9', '_blank', 'noopener,noreferrer')}>
+              <button className="bg-[#30ef90] text-[#00532d] font-bold px-10 py-5 rounded-full text-lg shadow-xl shadow-[#30ef90]/20 active:scale-95 transition-all font-body hover:cursor-pointer" onClick={() => window.open('https://forms.gle/PWZteGnuDJYDm84Y7', '_blank', 'noopener,noreferrer')}>
                 Enroll Your Child
               </button>
-              <div className="flex items-center gap-3 px-4">
-                <div className="flex -space-x-3">
-                  <img className="w-10 h-10 rounded-full border-2 border-[#106851] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALi4YM7wghviCOo2Hwk8ucwZBstOEis2ADsc1JluCIo5oh8yQAq3ByqTEsd1v5gqN-G8ufyJjenVTfZNLYqxtBSqpeUWO3Jv13LjowgwMFCexWHtmUQaA_GSYg3g6jbMZPoGZgrPMhLHJxircDHlqN15VcXZMYbjyeGQPUgk9Q8ARRK1wKK8DNv6e9eCqaYF_58jr_M6pYT1VMNx1_bmqtIzJBewqCQ3XpG4Elfb0b30rjJKjDjTV40DdoeT1RBGyjRuEfaURj8Ng" alt="Student" />
-                  <img className="w-10 h-10 rounded-full border-2 border-[#106851] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPb3b8Jygs7vnhzqAGOd2p7cXnFZo7Wg98uRZAFTjnWG02whClv0tUHB4PJG2IpQGNG9KpQGNG9KpQGNG9K" alt="Student" />
-                  <img className="w-10 h-10 rounded-full border-2 border-[#106851] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXooV6aeTS4MhWir1z83_YwS9XR6oNQEh9Kvg0tOkWf9AD1Fq9XWDV4BkTCp59RiE0676AJHKwATY2QHmuJngaYGZfDFwGnCVufYpRApuTzdKLo7TSH1LUR1hE2jGwYWJa0ns7ONK7bhJHxHMfzqSyh4D_x6wpPtzToKXn-sOxfW-OrVrQMBvMHTmi8wDJNK3VFrSZb98e0A2U3j8iXeIrOwC1-ZhWrfQUTvdWFGnyzbmGCtvK2J4piGCY4jTZoUicO9Msh0Igz9k" alt="Student" />
+              <div className="flex items-center gap-3 px-2">
+                <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2.5">
+                  <span className="font-display font-bold text-[#30ef90] text-lg leading-none">2000+</span>
+                  <span className="font-body text-white/90 text-sm font-semibold">Students Trained</span>
                 </div>
-                <span className="font-body text-white/80 text-sm font-medium">2000+ Students Trained</span>
               </div>
             </div>
           </div>
@@ -247,7 +257,7 @@ const StudentPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             <div className="md:col-span-8 group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#7fb8ac]/10 h-72 md:h-80">
-              <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src={juniorVideoGen} alt="AI Video Generation" />
+              <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src={juniorDesign} alt="AI Video Generation" />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,44,56,0.9) 0%, transparent 60%)' }} />
               <div className="absolute bottom-0 p-8 text-left">
                 <span className="font-body px-3 py-1 bg-[#01d2ff] text-[#002c38] rounded-full text-xs font-bold mb-4 inline-block">VIDEO</span>
@@ -257,7 +267,7 @@ const StudentPage = () => {
             </div>
 
             <div className="md:col-span-4 group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#7fb8ac]/10 h-72 md:h-80">
-              <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src={juniorPrompting} alt="AI Prompting" />
+              <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src={juniorVideoGen} alt="AI Prompting" />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,17,14,0.9) 0%, transparent 60%)' }} />
               <div className="absolute bottom-0 p-6 text-left">
                 <span className="font-body px-3 py-1 bg-[#30ef90] text-[#00532d] rounded-full text-xs font-bold mb-4 inline-block">AI PROMPTING</span>
@@ -267,7 +277,7 @@ const StudentPage = () => {
             </div>
 
             <div className="md:col-span-4 group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#7fb8ac]/10 h-72 md:h-80">
-              <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src={juniorDesign} alt="Creating Poster" />
+              <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src={juniorPrompting} alt="Creating Poster" />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(16,104,81,0.9) 0%, transparent 60%)' }} />
               <div className="absolute bottom-0 p-6 text-left">
                 <span className="font-body px-3 py-1 bg-[#30ef90] text-[#00532d] rounded-full text-xs font-bold mb-4 inline-block">DESIGN</span>
@@ -471,7 +481,7 @@ const StudentPage = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-[#00DF82] text-[#004837] text-lg font-bold px-10 py-5 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all font-body hover:cursor-pointer" onClick={() => window.open('https://forms.gle/V6a1TWy1qj7WzRTi9', '_blank', 'noopener,noreferrer')}>
+                <button className="bg-[#00DF82] text-[#004837] text-lg font-bold px-10 py-5 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all font-body hover:cursor-pointer" onClick={() => window.open('https://forms.gle/PWZteGnuDJYDm84Y7', '_blank', 'noopener,noreferrer')}>
                   Register Now →
                 </button>
               </div>

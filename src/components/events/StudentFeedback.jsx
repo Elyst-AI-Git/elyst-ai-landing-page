@@ -366,11 +366,9 @@ export default function StudentFeedback() {
       grade: 'Grade 5',
     },
     {
-      src: null,
-      name: 'Coming Soon',
-      grade: 'Grade 7',
-      gradient: 'linear-gradient(135deg, #ffe8d6 0%, #ffcba4 100%)',
-      comingSoon: true,
+      src: '/student-video-2.mp4',
+      name: 'Aradhya',
+      grade: 'Grade 6',
     },
   ]
 
@@ -378,7 +376,7 @@ export default function StudentFeedback() {
     {
       src: '/student-audio-1.ogg',
       name: 'Farha',
-      teaser: 'Listen to their experience',
+      teaser: 'Grade 9',
       rotation: -2,
     },
     {
@@ -450,31 +448,6 @@ export default function StudentFeedback() {
           </div>
         </div>
 
-        {/* CTA */}
-        <div style={{ textAlign: 'center' }}>
-          <p style={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: '1.05rem', color: '#2c655b', marginBottom: 22,
-          }}>
-            Your child could be the next story we share.
-          </p>
-          <button
-            onClick={() => window.open('https://forms.gle/V6a1TWy1qj7WzRTi9', '_blank', 'noopener,noreferrer')}
-            style={{
-              background: '#004837', color: '#00DF82', border: 'none',
-              padding: '18px 44px', borderRadius: 999,
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 700, fontSize: '1rem', cursor: 'pointer',
-              boxShadow: '0 4px 24px rgba(0,72,55,0.2)',
-              letterSpacing: '-0.02em',
-              transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-            }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = '0 10px 36px rgba(0,72,55,0.3)' }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,72,55,0.2)' }}
-          >
-            Enroll Your Child →
-          </button>
-        </div>
 
       </div>
     </section>

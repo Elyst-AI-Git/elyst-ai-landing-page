@@ -15,7 +15,11 @@ const Footer = () => {
 								href={`#${link.toLowerCase()}`}
 								onClick={() => {
 									if (link === "Events") {
-										document.getElementById("events")?.scrollIntoView({ behavior: "smooth" });
+										if (window.location.pathname === '/') {
+											document.getElementById("events")?.scrollIntoView({ behavior: "smooth" });
+										} else {
+											window.location.href = '/#events';
+										}
 										return;
 									}
 									// if (link === "Blog") {
