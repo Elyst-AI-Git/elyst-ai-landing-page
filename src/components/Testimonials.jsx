@@ -46,7 +46,7 @@ const testimonials = [
 const stats = [
   { value: 10, suffix: "+", label: "Businesses Worked With" },
   { value: 30, suffix: "+", label: "Sessions Delivered" },
-  { value: 2, suffix: "", label: "Cohorts Completed" },
+  { value: 3, suffix: "", label: "Cohorts Completed" },
 ];
 
 const CountUp = ({ target, suffix }) => {

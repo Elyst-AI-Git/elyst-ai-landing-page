@@ -11,7 +11,11 @@ const Navbar = () => {
 	const scrollTo = (id) => {
 		setMobileOpen(false)
 		if (id === 'Home') {
-			window.scrollTo({ top: 0, behavior: 'smooth' })
+			if (window.location.pathname === '/') {
+				window.scrollTo({ top: 0, behavior: 'smooth' })
+			} else {
+				navigate('/')
+			}
 			return
 		}
 		const el = document.getElementById(id.toLowerCase())
@@ -46,9 +50,9 @@ const Navbar = () => {
 					boxShadow: '0 4px 30px rgba(3, 98, 76, 0.2), inset 0 1px 0 rgba(255,255,255,0.1)',
 				}}
 			>
-				<span className="font-display font-bold text-2xl text-white" style={{ letterSpacing: '-0.075em' }}>
+				<button onClick={() => navigate('/')} className="font-display font-bold text-2xl text-white cursor-pointer" style={{ letterSpacing: '-0.075em', background: 'none', border: 'none', padding: 0 }}>
 					elyst AI
-				</span>
+				</button>
 
 				{/* Desktop nav - absolutely centered */}
 				<div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
