@@ -317,8 +317,6 @@ function VideoDeck({ videos }) {
             </div>
           )
         })}
-      </div>
-
       </div>{/* end deck wrapper */}
 
         {/* Right arrow */}
