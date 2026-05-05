@@ -2,16 +2,23 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom';
 
-const navLinks = ['Home', 'About', 'Events', /* 'Blog' */]
+const DEFAULT_NAV_LINKS = ['Home', 'About', 'Events', /* 'Blog' */]
 
-const Navbar = () => {
+// customLinks: optional [{ label, action }] — overrides the default nav links
+const Navbar = ({ ctaText, ctaAction, customLinks }) => {
 	const navigate = useNavigate();
+	const navCTAText = ctaText || 'Join the Elyst AI Circle →'
+	const navCTAAction = ctaAction || (() => navigate('/circle'))
 	const [mobileOpen, setMobileOpen] = useState(false)
 
 	const scrollTo = (id) => {
 		setMobileOpen(false)
 		if (id === 'Home') {
-			window.scrollTo({ top: 0, behavior: 'smooth' })
+			if (window.location.pathname === '/') {
+				window.scrollTo({ top: 0, behavior: 'smooth' })
+			} else {
+				navigate('/')
+			}
 			return
 		}
 		const el = document.getElementById(id.toLowerCase())
@@ -34,6 +41,11 @@ const Navbar = () => {
 		scrollTo(link)
 	}
 
+	// Build link list — custom links take priority over defaults
+	const renderLinks = customLinks
+		? customLinks // [{ label, action }]
+		: DEFAULT_NAV_LINKS.map(label => ({ label, action: () => handleNavClick(label) }))
+
 	return (
 		<nav className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 md:px-8 pt-4">
 			<div
@@ -46,29 +58,29 @@ const Navbar = () => {
 					boxShadow: '0 4px 30px rgba(3, 98, 76, 0.2), inset 0 1px 0 rgba(255,255,255,0.1)',
 				}}
 			>
-				<span className="font-display font-bold text-2xl text-white" style={{ letterSpacing: '-0.075em' }}>
+				<button onClick={() => navigate('/')} className="font-display font-bold text-2xl text-white cursor-pointer" style={{ letterSpacing: '-0.075em', background: 'none', border: 'none', padding: 0 }}>
 					elyst AI
-				</span>
+				</button>
 
 				{/* Desktop nav - absolutely centered */}
 				<div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
-					{navLinks.map((link) => (
+					{renderLinks.map(({ label, action }) => (
 						<button
-							key={link}
-							onClick={() => handleNavClick(link)}
+							key={label}
+							onClick={() => { action(); setMobileOpen(false) }}
 							className="font-body text-[0.95rem] text-white/85 hover:text-white transition-colors duration-200 min-h-12 flex items-center cursor-pointer"
 						>
-							{link}
+							{label}
 						</button>
 					))}
 				</div>
 
 				<div className="flex items-center justify-end">
 					<button
-						onClick={() => navigate('/circle')}
+						onClick={navCTAAction}
 						className="hidden md:flex items-center justify-center font-body font-bold text-[0.95rem] bg-white text-primary rounded-button px-7 min-h-12 hover:opacity-90 transition-opacity cursor-pointer"
 					>
-						Join the Elyst AI Circle →
+						{navCTAText}
 					</button>
 
 					{/* Mobile hamburger */}
@@ -103,20 +115,20 @@ const Navbar = () => {
 						}}
 					>
 						<div className="flex flex-col items-center gap-4 py-6 px-5">
-							{navLinks.map((link) => (
+							{renderLinks.map(({ label, action }) => (
 								<button
-									key={link}
-									onClick={() => handleNavClick(link)}
+									key={label}
+									onClick={() => { action(); setMobileOpen(false) }}
 									className="font-body text-base text-white/85 hover:text-white transition-colors min-h-12 cursor-pointer"
 								>
-									{link}
+									{label}
 								</button>
 							))}
 							<button
-								onClick={() => { setMobileOpen(false); navigate('/circle') }}
+								onClick={() => { setMobileOpen(false); navCTAAction() }}
 								className="font-body font-bold text-sm bg-white text-primary rounded-button px-6 min-h-12 mt-2 hover:opacity-90 transition-opacity cursor-pointer"
 							>
-								Join →
+								{ctaText ? ctaText : 'Join →'}
 							</button>
 						</div>
 					</motion.div>

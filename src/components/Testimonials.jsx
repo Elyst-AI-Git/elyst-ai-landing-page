@@ -22,9 +22,9 @@ const testimonials = [
   },
   //1
   {
-    quote: "It was helpful for an individual who has zero knowledge in technical background. Good to see you bringing insights on people on how to use the tools more efficiently.",
-    name: "Swathi Pradeep",
-    role: "AI Yathra 2.0 Learner",
+    quote: "My son attended the program and really enjoyed it. The sessions were fun, engaging, and kept him actively involved throughout.",
+    name: "Reshmi",
+    role: "AI for Juniors Parent",
   },
   //2
   {
@@ -46,7 +46,7 @@ const testimonials = [
 const stats = [
   { value: 10, suffix: "+", label: "Businesses Worked With" },
   { value: 30, suffix: "+", label: "Sessions Delivered" },
-  { value: 2, suffix: "", label: "Cohorts Completed" },
+  { value: 3, suffix: "", label: "Cohorts Completed" },
 ];
 
 const CountUp = ({ target, suffix }) => {

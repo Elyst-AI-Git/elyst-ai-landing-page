@@ -67,19 +67,43 @@ const Events = () => {
                 navigate('/events/ai-for-juniors')
                 window.scrollTo(0, 0)
               } : undefined}
-            className={`rounded-card overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-250 relative flex flex-col min-h-72${event.title === 'AI for Juniors' ? ' cursor-pointer' : ''}`}
-              style={event.image ? {
-                backgroundImage: `url(${event.image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: event.imagePosition || 'center',
-              } : {}}
+              className={`group rounded-card overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-250 relative flex flex-col${event.title === 'AI for Juniors' ? ' cursor-pointer' : ''}`}
+              style={{ ...(event.image ? { backgroundImage: `url(${event.image})`, backgroundSize: 'cover', backgroundPosition: event.imagePosition || 'center' } : {}), aspectRatio: '1/1' }}
             >
-              {/* Dark gradient overlay for readability */}
+              {/* Dark gradient overlay — fades out on hover to reveal image */}
               {event.image && (
-                <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/80 to-black/60 rounded-card" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/80 to-black/60 rounded-card transition-opacity duration-400 group-hover:opacity-0" />
               )}
+
+              {/* "OPEN NOW" ribbon for AI for Juniors — hides on hover */}
+              {event.title === 'AI for Juniors' && (
+                <div
+                  className="transition-opacity duration-400 group-hover:opacity-0"
+                  style={{
+                    position: 'absolute',
+                    top: 26,
+                    right: -36,
+                    width: 160,
+                    textAlign: 'center',
+                    transform: 'rotate(45deg)',
+                    background: '#00DF82',
+                    color: '#004837',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.58rem',
+                    fontWeight: 800,
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    padding: '7px 0',
+                    zIndex: 20,
+                    boxShadow: '0 2px 10px rgba(0,0,0,0.25)',
+                  }}>
+                  Open Now
+                </div>
+              )}
+
+              {/* Text content — fades out on hover */}
               <div
-                className="relative z-10 p-8 flex flex-col h-full gap-4"
+                className="relative z-10 p-8 flex flex-col h-full gap-4 transition-opacity duration-400 group-hover:opacity-0"
                 style={!event.image ? { background: 'linear-gradient(135deg, #0a3d2a 0%, #083d22 40%, #1a5c3a 100%)' } : {}}
               >
                 <span className={`font-body text-xs font-bold rounded-pill px-3 py-1 self-start ${event.tagStyle}`}>

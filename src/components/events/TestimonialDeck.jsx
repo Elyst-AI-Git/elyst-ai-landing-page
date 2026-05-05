@@ -2,21 +2,24 @@ import React, { useState, useEffect, useRef, useCallback } from 'react'
 
 const testimonials = [
   {
-    name: 'Sinan',
-    text: 'I learned a lot about AI tools and their practical use. The hands on approach of showing each things practically, showing how each tool actually works, made the sessions very effective.',
-    initials: 'S',
+    name: 'Reshmi',
+    role: 'AI for Juniors Parent',
+    text: 'My son attended the program and really enjoyed it. The sessions were fun, engaging, and kept him actively involved throughout. He loved creating his own superhero-style images and even built a simple website using the Lovable app, which was a big highlight. Overall, it\'s a great program that encourages kids to be creative and actually build things with AI.',
+    initials: 'R',
     color: '#004837',
   },
   {
-    name: 'Swathi',
-    text: 'It was helpful for an individual who has zero knowledge in technical background. Good to see you bringing insights on people on how to use the tools more efficiently.',
+    name: 'Sailna',
+    role: 'AI for Juniors Parent',
+    text: 'As a parent, I was happy to see my son so involved during the AI session. He got practical experience with posters, videos and website designing. He knows a bit already, but this still gave him a fresh perspective and boosted his interest. A good initiative for young learners.',
     initials: 'S',
     color: '#006851',
   },
   {
-    name: 'Najib',
-    text: 'I made a poster and even made a website, never thought I can do that, all thanks to the high quality session, it was so easy to follow along.',
-    initials: 'N',
+    name: 'Anusha',
+    role: 'AI for Juniors Parent',
+    text: 'Thank you Elyst AI for your guidance to understand the basics of AI.. I think my son get an idea about the language of future. Prompt Creation, web design using AI are so interesting for basic students..They can use this type of tools in many situations...😍',
+    initials: 'A',
     color: '#00a36c',
   },
 ]
@@ -217,7 +220,7 @@ export default function TestimonialDeck() {
             borderRadius: '999px',
             marginBottom: '20px',
           }}>
-            What Students Say
+            What Parents Say
           </span>
           <h2 style={{
             fontFamily: "'Space Grotesk', sans-serif",
@@ -228,7 +231,7 @@ export default function TestimonialDeck() {
             letterSpacing: '-0.05em',
             margin: 0,
           }}>
-            Real results, real students.
+            Real results the parents saw.
           </h2>
           <p style={{
             fontFamily: "'DM Sans', sans-serif",
@@ -280,6 +283,7 @@ export default function TestimonialDeck() {
                   <div className="tdeck-avatar" style={{ background: t.color }}>{t.initials}</div>
                   <div>
                     <div className="tdeck-name text-left">{t.name}</div>
+                    {t.role && <div className="tdeck-role text-left">{t.role}</div>}
                   </div>
                   {/* Stars */}
                   <div style={{ marginLeft: 'auto', display: 'flex', gap: '3px' }}>
@@ -306,7 +310,6 @@ export default function TestimonialDeck() {
           ))}
         </div>
 
-        <p className="tdeck-hint">Click the Testimonial to see the next</p>
       </div>
     </section>
   )
