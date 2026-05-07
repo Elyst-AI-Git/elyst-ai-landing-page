@@ -9,7 +9,7 @@ const testimonials = [
     color: '#004837',
   },
   {
-    name: 'Sailna',
+    name: 'Saleena',
     role: 'AI for Juniors Parent',
     text: 'As a parent, I was happy to see my son so involved during the AI session. He got practical experience with posters, videos and website designing. He knows a bit already, but this still gave him a fresh perspective and boosted his interest. A good initiative for young learners.',
     initials: 'S',
@@ -130,13 +130,13 @@ export default function TestimonialDeck() {
         .tdeck-text {
           font-family: 'DM Sans', sans-serif;
           letter-spacing: -0.025em;
-          font-size: clamp(1rem, 2.6vw, 1.2rem);
-          line-height: 1.7;
+          font-size: clamp(0.82rem, 2vw, 0.96rem);
+          line-height: 1.6;
           color: #1a4034;
           flex: 1;
           overflow: hidden;
           display: -webkit-box;
-          -webkit-line-clamp: 6;
+          -webkit-line-clamp: 9;
           -webkit-box-orient: vertical;
         }
         .tdeck-avatar-row {
