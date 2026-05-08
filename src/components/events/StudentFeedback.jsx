@@ -380,9 +380,9 @@ export default function StudentFeedback() {
       rotation: -2,
     },
     {
-      src: null,
-      name: 'Coming Soon',
-      teaser: 'Audio testimonial coming soon',
+      src: '/student-audio-2.ogg',
+      name: 'Anjana',
+      teaser: 'Grade 5',
       rotation: 2.5,
     },
   ]
