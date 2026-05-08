@@ -220,6 +220,14 @@ const StudentPage = () => {
                   <h3 className="font-display text-4xl font-bold text-[#00362e]">1</h3>
                   <p className="font-body text-[#2c655b] font-medium">Certificate</p>
                 </div>
+                <div className="p-8 rounded-lg shadow-sm -translate-y-1 transform -rotate-2 hover:rotate-0 transition-all cursor-default" style={{ background: '#006851' }}>
+                  <h3 className="font-display text-2xl font-bold text-[#00DF82]">10–11.30 IST</h3>
+                  <p className="font-body text-white/80 font-medium">Morning Batch</p>
+                </div>
+                <div className="bg-white p-8 rounded-lg shadow-sm translate-y-3 transform rotate-2 hover:rotate-0 transition-all cursor-default">
+                  <h3 className="font-display text-2xl font-bold text-[#004837]">7–8.30 IST</h3>
+                  <p className="font-body text-[#2c655b] font-medium">Evening Batch</p>
+                </div>
               </div>
             </div>
 
